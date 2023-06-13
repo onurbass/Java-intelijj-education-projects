@@ -11,4 +11,11 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="jsonEditor">
+    <option name="stateMap">
+      <map>
+        <entry key="BilgeAdamLessons" value="[&#10;&#9;{&#10;&#9;&#9;&quot;calisanlar&quot;:{&#10;&#9;&#9;&#9;&quot;adi&quot;:&quot;Serkan&quot;,&#10;&#9;&#9;&#9;&quot;soyadi&quot;:&quot;Zorlu&quot;,&#10;&#9;&#9;&#9;&quot;yas&quot;:25&#10;&#9;&#9;}&#10;&#9;},&#10;&#9;{&#10;&#9;&#9;&quot;calisanlar&quot;:{&#10;&#9;&#9;&#9;&quot;adi&quot;:&quot;Burak&quot;,&#10;&#9;&#9;&#9;&quot;soyadi&quot;:&quot;Delice&quot;,&#10;&#9;&#9;&#9;&quot;yas&quot;:33&#10;&#9;&#9;}&#10;&#9;},&#10;&#9;{&#10;&#9;&#9;&quot;calisanlar&quot;:{&#10;&#9;&#9;&#9;&quot;adi&quot;:&quot;Mehmet&quot;,&#10;&#9;&#9;&#9;&quot;soyadi&quot;:&quot;Öksüz&quot;,&#10;&#9;&#9;&#9;&quot;yas&quot;:25&#10;&#9;&#9;}&#10;&#9;}&#10;]" />
+      </map>
+    </option>
+  </component>
 </project>
