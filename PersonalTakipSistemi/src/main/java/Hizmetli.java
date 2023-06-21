@@ -8,7 +8,7 @@ public class Hizmetli extends Personel {
 
         this.id="H-"+idNo++;
         PersonelManager.getPersoneller().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(6));
+        setDepartman(PersonelManager.getDepartmanlar().get(0));
     }
 
     public String getId() {

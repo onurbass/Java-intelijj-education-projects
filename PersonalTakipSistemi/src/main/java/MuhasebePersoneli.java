@@ -8,7 +8,7 @@ public class MuhasebePersoneli extends Personel {
 
         this.id="MP-"+idNo++;
         PersonelManager.getPersoneller().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(3));
+        setDepartman(PersonelManager.getDepartmanlar().get(4));
     }
 
     public static int getIdNo() {

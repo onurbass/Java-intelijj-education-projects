@@ -11,17 +11,18 @@ public class PersonelManager {
     public static void main(String[] args) {
         PersonelManager personelManager = new PersonelManager();
         personelManager.departmanOlustur();
-        //System.out.println(personelManager.departmanlar);
-        GenelMudur genelMudur = new GenelMudur("fsfs",31,1000f, LocalDate.of(1998,5,6));
-        System.out.println(PersonelManager.personeller);
+        Hizmetli hizmetli = new Hizmetli("fsfs",31,31f,LocalDate.of(1998,5,5));
+        System.out.println(departmanlar);
+        System.out.println(personeller);
     }
 
     public  void departmanOlustur() {
-        EDepartmanlar[] departman = EDepartmanlar.values();
-
-        for (int i = 0; i < departman.length; i++) {
-            this.departmanlar.add(new Departman(departman[i]));
-        }
+        departmanlar.add(new Departman("Hizmet"));
+        departmanlar.add(new Departman("Teknik"));
+        departmanlar.add(new Departman("Yonetim"));
+        departmanlar.add(new Departman("IK"));
+        departmanlar.add(new Departman("Muhasebe"));
+        departmanlar.add(new Departman("Buro"));
 
     }
 

@@ -11,7 +11,7 @@ public class TeknikPersonel extends Personel {
 
         this.id="TP-"+idNo++;
         PersonelManager.getPersoneller().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(5));
+        
     }
 
     public static int getIdNo() {

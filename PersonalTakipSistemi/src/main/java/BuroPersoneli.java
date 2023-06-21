@@ -9,7 +9,7 @@ private static int idNo=1;
 
         this.id="BP-"+idNo++;
         PersonelManager.getPersoneller().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(0));
+        setDepartman(PersonelManager.getDepartmanlar().get(5));
     }
 
     public String getId() {

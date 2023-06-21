@@ -1,18 +1,19 @@
 import java.util.List;
 
 public class Departman {
-    private EDepartmanlar departman;
+    private String departman;
 
     private List<Personel> departmandakiPersoneller;
 
-    public Departman(EDepartmanlar departman) {
+    public Departman(String departman) {
         this.departman = departman;
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "Departman{" +
                 "departman=" + departman +
+                ", departmandakiPersoneller=" + departmandakiPersoneller +
                 '}';
     }
 }

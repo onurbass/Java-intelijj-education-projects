@@ -9,7 +9,7 @@ public class InsanKaynaklari extends Personel {
 
         this.id="IK-"+idNo++;
         PersonelManager.getPersoneller().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(4));
+        setDepartman(PersonelManager.getDepartmanlar().get(3));
     }
 
     public String getId() {
@@ -26,5 +26,12 @@ public class InsanKaynaklari extends Personel {
 
     public static void setIdNo(int idNo) {
         InsanKaynaklari.idNo = idNo;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "InsanKaynaklari{" +
+                "id=" + id +
+                "} " + super.toString();
     }
 }

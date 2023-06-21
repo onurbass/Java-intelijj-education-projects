@@ -9,7 +9,7 @@ public class GenelMudur extends Personel {
 
         this.id = "GM-" + idNo++;
         PersonelManager.getPersoneller().put(this.id, this);
-        setDepartman(PersonelManager.getDepartmanlar().get(1));
+        setDepartman(PersonelManager.getDepartmanlar().get(2));
     }
 
     public String getId() {

@@ -74,11 +74,10 @@ private Departman departman;
     }
 
 
-
     @Override
-    public String toString() {
-        return "Personal{" +
-                "isim='" + isim + '\'' +
+    public java.lang.String toString() {
+        return "Personel{" +
+                "isim=" + isim +
                 ", yas=" + yas +
                 ", maas=" + maas +
                 ", iseGiris=" + iseGiris +
