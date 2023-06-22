@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 
 public class BuroPersoneli extends Personel {
@@ -8,8 +10,10 @@ private static int idNo=1;
         super(isim, yas, maas, iseGiris);
 
         this.id="BP-"+idNo++;
-        PersonelManager.getPersoneller().put(this.id,this);
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id,this);
         setDepartman(PersonelManager.getDepartmanlar().get(5));
+        getDepartman().getDepartmandakiPersoneller().add(this);
     }
 
     public String getId() {
@@ -26,5 +30,12 @@ private static int idNo=1;
 
     public static void setIdNo(int idNo) {
         BuroPersoneli.idNo = idNo;
+    }
+
+    @Override
+    public String toString() {
+        return "BuroPersoneli{" +
+                "id='" + id + '\'' +
+                "} " + super.toString();
     }
 }

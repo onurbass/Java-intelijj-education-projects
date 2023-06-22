@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 
 public class TeknikPersonel extends Personel {
@@ -10,7 +12,9 @@ public class TeknikPersonel extends Personel {
         super(isim, yas, maas, iseGiris);
 
         this.id="TP-"+idNo++;
-        PersonelManager.getPersoneller().put(this.id,this);
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id,this);
+        setDepartman(PersonelManager.getDepartmanlar().get(1));
         
     }
 
@@ -33,6 +37,8 @@ public class TeknikPersonel extends Personel {
 
     @Override
     public String toString() {
-        return "TeknikPersonel{} " + super.toString();
+        return "TeknikPersonel{" +
+                "id='" + id + '\'' +
+                "} " + super.toString();
     }
 }

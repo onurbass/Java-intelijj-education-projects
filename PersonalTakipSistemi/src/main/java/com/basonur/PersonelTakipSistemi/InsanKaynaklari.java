@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 
 public class InsanKaynaklari extends Personel {
@@ -8,7 +10,8 @@ public class InsanKaynaklari extends Personel {
         super(isim, yas, maas, iseGiris);
 
         this.id="IK-"+idNo++;
-        PersonelManager.getPersoneller().put(this.id,this);
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id,this);
         setDepartman(PersonelManager.getDepartmanlar().get(3));
     }
 

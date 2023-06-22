@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 
 public class Personel {
@@ -32,6 +34,30 @@ private Departman departman;
         return iseGiris;
     }
 
+    public String getIsim() {
+        return isim;
+    }
+
+    public void setIsim(String isim) {
+        this.isim = isim;
+    }
+
+    public int getYas() {
+        return yas;
+    }
+
+    public void setYas(int yas) {
+        this.yas = yas;
+    }
+
+    public float getMaas() {
+        return maas;
+    }
+
+    public void setMaas(float maas) {
+        this.maas = maas;
+    }
+
     public void setIseGiris(LocalDate iseGiris) {
         this.iseGiris = iseGiris;
     }
@@ -44,44 +70,14 @@ private Departman departman;
         this.departman = departman;
     }
 
-    public String getIsim() {
-        return isim;
-    }
-
-    public void setIsim(String isim) {
-        this.isim = isim;
-    }
-
-
-    public float getMaas() {
-        return maas;
-    }
-
-    public void setMaas(float maas) {
-        this.maas = maas;
-    }
-
-    public void setMaas(int maas) {
-        this.maas = maas;
-    }
-
-    public int getYas() {
-        return yas;
-    }
-
-    public void setYas(int yas) {
-        this.yas = yas;
-    }
-
-
     @Override
-    public java.lang.String toString() {
-        return "Personel{" +
-                "isim=" + isim +
-                ", yas=" + yas +
-                ", maas=" + maas +
-                ", iseGiris=" + iseGiris +
-                ", departman=" + departman +
-                '}';
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Personel{");
+        sb.append("isim='").append(isim).append('\'');
+        sb.append(", yas=").append(yas);
+        sb.append(", maas=").append(maas);
+        sb.append(", iseGiris=").append(iseGiris);
+        sb.append('}');
+        return sb.toString();
     }
 }

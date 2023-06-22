@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 
 public class MuhasebePersoneli extends Personel {
@@ -7,7 +9,8 @@ public class MuhasebePersoneli extends Personel {
         super(isim, yas, maas, iseGiris);
 
         this.id="MP-"+idNo++;
-        PersonelManager.getPersoneller().put(this.id,this);
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id,this);
         setDepartman(PersonelManager.getDepartmanlar().get(4));
     }
 
@@ -27,4 +30,10 @@ public class MuhasebePersoneli extends Personel {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "MuhasebePersoneli{" +
+                "id='" + id + '\'' +
+                "} " + super.toString();
+    }
 }

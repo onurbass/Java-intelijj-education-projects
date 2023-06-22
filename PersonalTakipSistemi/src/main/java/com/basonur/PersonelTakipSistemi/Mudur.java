@@ -1,3 +1,5 @@
+package com.basonur.PersonelTakipSistemi;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,8 @@ public class Mudur extends Personel {
         this.mudurunDepartmanlari=new ArrayList<>();
 
         this.id="M-"+idNo++;
-        PersonelManager.getPersoneller().put(this.id,this);
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id,this);
         setDepartman(PersonelManager.getDepartmanlar().get(2));
     }
 

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.onurbas.proje</groupId>
-    <artifactId>PersonalTakipSistemi</artifactId>
+    <artifactId>AraDonemOdev</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
