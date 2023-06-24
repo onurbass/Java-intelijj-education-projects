@@ -1,18 +1,18 @@
-package com.basonur.PersonelTakipSistemi;
+package com.basonur.Soru1PersonelTakipSistemi;
 
 import java.time.LocalDate;
 
 public class InsanKaynaklari extends Personel {
-    private static int idNo=1;
+    private static int idNo = 1;
     private String id;
 
     public InsanKaynaklari(String isim, int yas, float maas, LocalDate iseGiris) {
         super(isim, yas, maas, iseGiris);
-
-        this.id="IK-"+idNo++;
-        PersonelManager.getPersoneller().add(this);
-        PersonelManager.getPersonelById().put(this.id,this);
         setDepartman(PersonelManager.getDepartmanlar().get(3));
+        getDepartman().getDepartmandakiPersoneller().add(this);
+        this.id = "IK-" + idNo++;
+        PersonelManager.getPersoneller().add(this);
+        PersonelManager.getPersonelById().put(this.id, this);
     }
 
     public String getId() {

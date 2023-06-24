@@ -1,4 +1,4 @@
-package com.basonur.PersonelTakipSistemi;
+package com.basonur.Soru1PersonelTakipSistemi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,13 +6,12 @@ import java.util.List;
 public class Departman {
     private String isim;
 
-    private  List<Personel> departmandakiPersoneller;
+    private List<Personel> departmandakiPersoneller;
 
     public Departman(String isim) {
         this.isim = isim;
-        this.departmandakiPersoneller=new ArrayList<>();
+        this.departmandakiPersoneller = new ArrayList<>();
     }
-
 
 
     public String getIsim() {
@@ -35,7 +34,6 @@ public class Departman {
     public java.lang.String toString() {
         return "Departman{" +
                 "departman=" + isim +
-
                 '}';
     }
 }

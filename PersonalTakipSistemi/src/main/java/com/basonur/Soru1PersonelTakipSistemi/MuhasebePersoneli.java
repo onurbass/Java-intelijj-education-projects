@@ -1,21 +1,18 @@
-package com.basonur.PersonelTakipSistemi;
+package com.basonur.Soru1PersonelTakipSistemi;
 
 import java.time.LocalDate;
 
-public class TeknikPersonel extends Personel {
-    private static int idNo=1;
+public class MuhasebePersoneli extends Personel {
+    private static int idNo = 1;
     private String id;
 
-
-
-    public TeknikPersonel(String isim, int yas, float maas, LocalDate iseGiris) {
+    public MuhasebePersoneli(String isim, int yas, float maas, LocalDate iseGiris) {
         super(isim, yas, maas, iseGiris);
-
-        this.id="TP-"+idNo++;
+        setDepartman(PersonelManager.getDepartmanlar().get(4));
+        getDepartman().getDepartmandakiPersoneller().add(this);
+        this.id = "MP-" + idNo++;
         PersonelManager.getPersoneller().add(this);
-        PersonelManager.getPersonelById().put(this.id,this);
-        setDepartman(PersonelManager.getDepartmanlar().get(1));
-        
+        PersonelManager.getPersonelById().put(this.id, this);
     }
 
     public static int getIdNo() {
@@ -23,7 +20,7 @@ public class TeknikPersonel extends Personel {
     }
 
     public static void setIdNo(int idNo) {
-        TeknikPersonel.idNo = idNo;
+        MuhasebePersoneli.idNo = idNo;
     }
 
     public String getId() {
@@ -34,10 +31,9 @@ public class TeknikPersonel extends Personel {
         this.id = id;
     }
 
-
     @Override
     public String toString() {
-        return "TeknikPersonel{" +
+        return "MuhasebePersoneli{" +
                 "id='" + id + '\'' +
                 "} " + super.toString();
     }
