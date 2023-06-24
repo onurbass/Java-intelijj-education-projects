@@ -15,10 +15,7 @@ public class PersonelManager implements IIslev {
     public static void main(String[] args) {
         PersonelManager personelManager = new PersonelManager();
         personelManager.departmanOlustur();
-        Hizmetli hizmetli = new Hizmetli("fsfs", 31, 31f, LocalDate.of(1998, 5, 5));
-        Hizmetli hizmetli2 = new Hizmetli("fsfs", 31, 31f, LocalDate.of(1998, 5, 5));
-        Hizmetli hizmetli3 = new Hizmetli("fsfs", 31, 31f, LocalDate.of(1998, 5, 5));
-        Hizmetli hizmetli4 = new Hizmetli("fsfs", 31, 31f, LocalDate.of(1998, 5, 5));
+        personelManager.defPersonelOlustur();
         personelManager.secimSistemi();
     }
 
@@ -32,12 +29,29 @@ public class PersonelManager implements IIslev {
         departmanlar.add(new Departman("Mudur"));
     }
 
+    public void defPersonelOlustur() {
+        Mudur mudur = new Mudur("Ali", 31, 11000f, LocalDate.of(2020, 6, 7));
+        Mudur mudur1 = new Mudur("Kerim", 65, 25000f, LocalDate.of(2016, 8, 7));
+        Mudur mudur2 = new Mudur("Mustafa", 56, 25000f, LocalDate.of(2016, 8, 7));
+        Hizmetli hizmetli1 = new Hizmetli("Onur", 30, 10000f, LocalDate.of(2020, 6, 7));
+        GenelMudur genelMudur = new GenelMudur("Veli", 25, 35000f, LocalDate.of(2016, 8, 7));
+        InsanKaynaklari insanKaynaklari = new InsanKaynaklari("Ahmet", 33, 13000f, LocalDate.of(2016, 8, 7));
+        TeknikPersonel teknikPersonel = new TeknikPersonel("Mehmet", 31, 14000f, LocalDate.of(2019, 9, 15));
+        BuroPersoneli buroPersoneli = new BuroPersoneli("Cenk", 35, 15000f, LocalDate.of(2017, 6, 20));
+        MuhasebePersoneli muhasebePersoneli = new MuhasebePersoneli("Menk", 45, 16000f, LocalDate.of(2014, 3, 2));
+        mudur.getMudurunDepartmanlari().add(departmanlar.get(0));
+        mudur.getMudurunDepartmanlari().add(departmanlar.get(1));
+        mudur1.getMudurunDepartmanlari().add(departmanlar.get(3));
+        mudur1.getMudurunDepartmanlari().add(departmanlar.get(4));
+        mudur2.getMudurunDepartmanlari().add(departmanlar.get(5));
+    }
+
     public void personelEkle() {
         String secim;
         int sayac = 1;
         String isim = Utility.stringDegerAlma("Personelin ismini giriniz");
         int yas = Utility.intDegerAlma("Personelin yaşını gir");
-        float maas = (float) Utility.doubleDegerAlma("Personelin maaşını giriniz.");
+        float maas = Float.parseFloat(Utility.stringDegerAlma("Personelin maaşını giriniz."));
         LocalDate iseGiris = Utility.stringTarihAlma("İşe başlama tarihi girin yil-ay-gün");
         scanner.nextLine();
         System.out.println("Eklenecek personelin departmanını seçin :");
@@ -84,16 +98,19 @@ public class PersonelManager implements IIslev {
     }
 
     public void personelListele() {
+        int sayac=0;
         try {
             if (!personeller.isEmpty()) {
                 for (Personel personel :
                         personeller) {
-                    System.out.println(personel);
+                    sayac++;
+                    System.out.println(sayac+".personel=> "+personel.getIsim()+" - "+personel.getId()+" - "+personel.getDepartman().getIsim());
                 }
             } else throw new PersonelTakipException(ErrorType.LISTE_BOS, "Personel bulunmadığından işlem başarısız");
         } catch (Exception e) {
             System.out.println(e.toString());
         }
+        sayac=0;
     }
 
     public void personelDüzenle() {
@@ -110,13 +127,13 @@ public class PersonelManager implements IIslev {
                     System.out.println(departman);
                 }
                 int departmanSecim = Utility.intDegerAlma("Departmanı seçin");
-                if (departmanSecim >departmanlar.size() && departmanSecim<1) {
+                if (departmanSecim < departmanlar.size() && departmanSecim >= 1) {
                     delete(personeller.get(personelSirasi - 1).getDepartman().getDepartmandakiPersoneller(), personeller.get(personelSirasi - 1));
                     personeller.get(personelSirasi - 1).setDepartman(departmanlar.get(departmanSecim - 1));
+                    departmanlar.get(departmanSecim - 1).getDepartmandakiPersoneller().add(personeller.get(personelSirasi - 1));
                     System.out.println("Personel düzenlenmiştir.==");
                     System.out.println(personeller.get(personelSirasi - 1));
-                }else throw new RuntimeException("Yanlış departman girişi");
-
+                } else throw new RuntimeException("Yanlış departman girişi");
             } else throw new PersonelTakipException(ErrorType.LISTE_BOS, "Personel bulunmadığından işlem başarısız");
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -125,8 +142,14 @@ public class PersonelManager implements IIslev {
 
     public void departmanEkle() {
         String departmanAdi = Utility.stringDegerAlma("Eklenecek departmanın adını girin");
-        save(departmanlar, new Departman(departmanAdi));
-        System.out.println("Departman ekleme işlemi başarılı");
+        try {
+            if (!departmanlar.stream().anyMatch(x -> x.equals(departmanAdi))) {
+                save(departmanlar, new Departman(departmanAdi));
+                System.out.println("Departman ekleme işlemi başarılı");
+            } else throw new PersonelTakipException(ErrorType.ZATEN_VAR, "Departman zaten mevcut");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
         departmanListesi();
     }
 
@@ -135,7 +158,7 @@ public class PersonelManager implements IIslev {
             if (!departmanlar.isEmpty()) {
                 for (Departman departman :
                         departmanlar) {
-                    System.out.println(departman);
+                    System.out.println(departman.getIsim());
                 }
             } else throw new PersonelTakipException(ErrorType.LISTE_BOS, "Departman bulunamadı");
         } catch (Exception e) {
@@ -223,7 +246,8 @@ public class PersonelManager implements IIslev {
                     .filter(x -> x instanceof Mudur)
                     .collect(Collectors.toMap(x -> (Mudur) x, x -> ((Mudur) x).getMudurunDepartmanlari()));
             for (Entry<Mudur, List<Departman>> mudurDepartmanEntry : mudurDepartmanMap.entrySet()) {
-                System.out.println(mudurDepartmanEntry.getKey().getIsim() + " => " + mudurDepartmanEntry.getValue().stream().map(x -> x.getIsim()));
+                System.out.println(mudurDepartmanEntry.getKey().getIsim() + " => " + mudurDepartmanEntry.getValue().stream().map(Departman::getIsim)
+                        .collect(Collectors.toList()));
             }
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -234,7 +258,7 @@ public class PersonelManager implements IIslev {
         List<Personel> siraliListe = personeller.stream().sorted((Comparator.comparing(Personel::getIseGiris))).collect(Collectors.toList());
         for (Personel personel : siraliListe
         ) {
-            System.out.println(personel);
+            System.out.println(personel.getIsim() + " adlı personelin işe girişi -> " + personel.getIseGiris());
         }
     }
 
