@@ -3,12 +3,13 @@ package com.basonur.Soru1PersonelTakipSistemi;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Personel {
+public abstract class Personel  {
     private String isim;
     private int yas;
     private float maas;
     private LocalDate iseGiris;
     private Departman departman;
+    private String id;
 
     public Personel(String isim, int yas) {
         this.isim = isim;
@@ -28,7 +29,9 @@ public class Personel {
         this.iseGiris = iseGiris;
     }
 
-
+    public String getId() {
+        return id;
+    }
     public LocalDate getIseGiris() {
         return iseGiris;
     }

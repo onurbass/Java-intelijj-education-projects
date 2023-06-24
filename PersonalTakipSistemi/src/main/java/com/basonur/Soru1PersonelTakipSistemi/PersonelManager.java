@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-public class PersonelManager {
+public class PersonelManager implements IIslev {
     Scanner scanner = new Scanner(System.in);
     private static List<Departman> departmanlar = new ArrayList();
     private static List<Personel> personeller = new ArrayList<>();
@@ -33,66 +33,54 @@ public class PersonelManager {
     }
 
     public void personelEkle() {
-
         String secim;
         int sayac = 1;
-
-            String isim = Utility.stringDegerAlma("Personelin ismini giriniz");
-            int yas = Utility.intDegerAlma("Personelin yaşını gir");
-            float maas = (float) Utility.doubleDegerAlma("Personelin maaşını giriniz.");
-            LocalDate iseGiris = Utility.stringTarihAlma("İşe başlama tarihi girin yil-ay-gün");
-            scanner.nextLine();
-            System.out.println("Eklenecek personelin departmanını seçin :");
-            for (Departman departman : departmanlar
-            ) {
-                System.out.println(sayac + "-" + departman.getIsim());
-                sayac++;
-            }
-            System.out.println("0. Çıkış");
-
-            secim = scanner.nextLine();
-            switch (secim) {
-                case "1":
-                    Hizmetli hizmetli = new Hizmetli(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+hizmetli);
-                    break;
-                case "2":
-                    TeknikPersonel teknikPersonel = new TeknikPersonel(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+teknikPersonel);
-                    break;
-                case "3":
-                    GenelMudur genelMudur = new GenelMudur(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+genelMudur);
-                    break;
-                case "4":
-                    InsanKaynaklari insanKaynaklariPersoneli = new InsanKaynaklari(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+insanKaynaklariPersoneli);
-                    break;
-                case "5":
-                    MuhasebePersoneli muhasebePersoneli = new MuhasebePersoneli(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+muhasebePersoneli);
-                    break;
-                case "6":
-                    BuroPersoneli buroPersoneli = new BuroPersoneli(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+buroPersoneli);
-                    break;
-                case "7":
-                    Mudur mudur = new Mudur(isim, yas, maas, iseGiris);
-
-                    System.out.println("Personel ekleme başarılı. Eklenen personel => "+mudur);
-                    break;
-                default:
-                    System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
-                    break;
-            }
-
-
+        String isim = Utility.stringDegerAlma("Personelin ismini giriniz");
+        int yas = Utility.intDegerAlma("Personelin yaşını gir");
+        float maas = (float) Utility.doubleDegerAlma("Personelin maaşını giriniz.");
+        LocalDate iseGiris = Utility.stringTarihAlma("İşe başlama tarihi girin yil-ay-gün");
+        scanner.nextLine();
+        System.out.println("Eklenecek personelin departmanını seçin :");
+        for (Departman departman : departmanlar
+        ) {
+            System.out.println(sayac + "-" + departman.getIsim());
+            sayac++;
+        }
+        System.out.println("0. Çıkış");
+        secim = scanner.nextLine();
+        switch (secim) {
+            case "1":
+                Hizmetli hizmetli = new Hizmetli(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + hizmetli);
+                break;
+            case "2":
+                TeknikPersonel teknikPersonel = new TeknikPersonel(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + teknikPersonel);
+                break;
+            case "3":
+                GenelMudur genelMudur = new GenelMudur(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + genelMudur);
+                break;
+            case "4":
+                InsanKaynaklari insanKaynaklariPersoneli = new InsanKaynaklari(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + insanKaynaklariPersoneli);
+                break;
+            case "5":
+                MuhasebePersoneli muhasebePersoneli = new MuhasebePersoneli(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + muhasebePersoneli);
+                break;
+            case "6":
+                BuroPersoneli buroPersoneli = new BuroPersoneli(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + buroPersoneli);
+                break;
+            case "7":
+                Mudur mudur = new Mudur(isim, yas, maas, iseGiris);
+                System.out.println("Personel ekleme başarılı. Eklenen personel => " + mudur);
+                break;
+            default:
+                System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
+                break;
+        }
     }
 
     public void personelListele() {
@@ -122,9 +110,13 @@ public class PersonelManager {
                     System.out.println(departman);
                 }
                 int departmanSecim = Utility.intDegerAlma("Departmanı seçin");
-                personeller.get(personelSirasi - 1).setDepartman(departmanlar.get(departmanSecim - 1));
-                System.out.println("Personel düzenlenmiştir.==");
-                System.out.println(personeller.get(personelSirasi - 1));
+                if (departmanSecim >departmanlar.size() && departmanSecim<1) {
+                    delete(personeller.get(personelSirasi - 1).getDepartman().getDepartmandakiPersoneller(), personeller.get(personelSirasi - 1));
+                    personeller.get(personelSirasi - 1).setDepartman(departmanlar.get(departmanSecim - 1));
+                    System.out.println("Personel düzenlenmiştir.==");
+                    System.out.println(personeller.get(personelSirasi - 1));
+                }else throw new RuntimeException("Yanlış departman girişi");
+
             } else throw new PersonelTakipException(ErrorType.LISTE_BOS, "Personel bulunmadığından işlem başarısız");
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -133,7 +125,7 @@ public class PersonelManager {
 
     public void departmanEkle() {
         String departmanAdi = Utility.stringDegerAlma("Eklenecek departmanın adını girin");
-        departmanlar.add(new Departman(departmanAdi));
+        save(departmanlar, new Departman(departmanAdi));
         System.out.println("Departman ekleme işlemi başarılı");
         departmanListesi();
     }
@@ -434,6 +426,61 @@ public class PersonelManager {
 
     public static void setPersoneller(List<Personel> personeller) {
         PersonelManager.personeller = personeller;
+    }
+
+    @Override
+    public <T> void save(List<T> list, T t) {
+        list.add(t);
+    }
+
+    @Override
+    public <T> void delete(List<T> list, T t) {
+        list.remove(t);
+    }
+
+    @Override
+    public <T> List<T> findAll(List<T> list, T t) {
+        List<T> bulunanlar = new ArrayList<>();
+        for (T eleman : list) {
+            if (eleman.equals(t)) {
+                bulunanlar.add(eleman);
+            }
+        }
+        return bulunanlar;
+    }
+
+    @Override
+    public void findById() {
+        String arananId = Utility.stringDegerAlma("Aranacak idyi girin");
+        Optional<Personel> arananPersonel = personeller.stream()
+                .filter(x -> x.getDepartman().getDepartmandakiPersoneller().stream()
+                        .anyMatch(y -> y.getId().equals(arananId)))
+                .findFirst();
+        try {
+            if (arananPersonel.isPresent()) {
+                Personel personel = arananPersonel.get();
+                System.out.println("Aranan id bulundu. Personel bilgileri ->\n" + personel);
+            } else throw new PersonelTakipException(ErrorType.LISTEDE_YOK, "Aranan id bulunamadı");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }
+
+    @Override
+    public void deleteById() {
+        String arananId = Utility.stringDegerAlma("Aranacak idyi girin");
+        Personel arananPersonel = personeller.stream()
+                .filter(x -> x.getDepartman().getDepartmandakiPersoneller().stream()
+                        .anyMatch(y -> y.getId().equals(arananId)))
+                .findFirst().orElse(null);
+        try {
+            if (arananPersonel != null) {
+                System.out.println("Aranan id bulundu ve silindi ->\n" + arananPersonel);
+                delete(personeller, arananPersonel);
+            } else throw new PersonelTakipException(ErrorType.LISTEDE_YOK, "Aranan id bulunamadı");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }
 }
 
