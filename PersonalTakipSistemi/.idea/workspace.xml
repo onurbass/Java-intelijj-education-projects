@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a077ddc5-84f8-433f-84a3-cd477506f6be" name="Changes" comment="25062023">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/BuroPersoneli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Departman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/GenelMudur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Hizmetli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/InsanKaynaklari.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Mudur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/MuhasebePersoneli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Personel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/TeknikPersonel.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2RLTM3X6iscGMRfye20sdZa9TBG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/AraDonemOdev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a077ddc5-84f8-433f-84a3-cd477506f6be" name="Changes" comment="" />
+      <created>1687028310564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687028310564</updated>
+      <workItem from="1687028311604" duration="2281000" />
+      <workItem from="1687268420672" duration="2638000" />
+      <workItem from="1687287352971" duration="8966000" />
+      <workItem from="1687388211216" duration="3144000" />
+      <workItem from="1687431519656" duration="19025000" />
+      <workItem from="1687500649915" duration="22342000" />
+      <workItem from="1687634381746" duration="12235000" />
+      <workItem from="1687685511605" duration="4727000" />
+      <workItem from="1687698634755" duration="109000" />
+    </task>
+    <task id="LOCAL-00001" summary="21062023">
+      <created>1687297267218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687297267219</updated>
+    </task>
+    <task id="LOCAL-00002" summary="21062023">
+      <created>1687391079871</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687391079871</updated>
+    </task>
+    <task id="LOCAL-00003" summary="21062023">
+      <created>1687475887602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687475887602</updated>
+    </task>
+    <task id="LOCAL-00004" summary="24062023">
+      <created>1687615894163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687615894163</updated>
+    </task>
+    <task id="LOCAL-00005" summary="25062023">
+      <created>1687640500735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687640500735</updated>
+    </task>
+    <task id="LOCAL-00006" summary="25062023">
+      <created>1687646627927</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687646627927</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="21062023" />
+    <MESSAGE value="24062023" />
+    <MESSAGE value="25062023" />
+    <option name="LAST_COMMIT_MESSAGE" value="25062023" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

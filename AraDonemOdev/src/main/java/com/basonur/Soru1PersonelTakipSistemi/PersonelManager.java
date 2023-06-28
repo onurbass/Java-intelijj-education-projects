@@ -62,55 +62,65 @@ public class PersonelManager implements IIslev {
         }
         System.out.println("0. Çıkış");
         secim = scanner.nextLine();
-        switch (secim) {
-            case "1":
-                Hizmetli hizmetli = new Hizmetli(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + hizmetli);
-                break;
-            case "2":
-                TeknikPersonel teknikPersonel = new TeknikPersonel(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + teknikPersonel);
-                break;
-            case "3":
-                GenelMudur genelMudur = new GenelMudur(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + genelMudur);
-                break;
-            case "4":
-                InsanKaynaklari insanKaynaklariPersoneli = new InsanKaynaklari(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + insanKaynaklariPersoneli);
-                break;
-            case "5":
-                MuhasebePersoneli muhasebePersoneli = new MuhasebePersoneli(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + muhasebePersoneli);
-                break;
-            case "6":
-                BuroPersoneli buroPersoneli = new BuroPersoneli(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + buroPersoneli);
-                break;
-            case "7":
-                Mudur mudur = new Mudur(isim, yas, maas, iseGiris);
-                System.out.println("Personel ekleme başarılı. Eklenen personel => " + mudur);
-                break;
-            default:
-                System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
-                break;
+        if (Integer.parseInt(secim) <= 7 && Integer.parseInt(secim) >= 1) {
+            switch (secim) {
+                case "1":
+                    Hizmetli hizmetli = new Hizmetli(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + hizmetli);
+                    break;
+                case "2":
+                    TeknikPersonel teknikPersonel = new TeknikPersonel(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + teknikPersonel);
+                    break;
+                case "3":
+                    GenelMudur genelMudur = new GenelMudur(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + genelMudur);
+                    break;
+                case "4":
+                    InsanKaynaklari insanKaynaklariPersoneli = new InsanKaynaklari(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + insanKaynaklariPersoneli);
+                    break;
+                case "5":
+                    MuhasebePersoneli muhasebePersoneli = new MuhasebePersoneli(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + muhasebePersoneli);
+                    break;
+                case "6":
+                    BuroPersoneli buroPersoneli = new BuroPersoneli(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + buroPersoneli);
+                    break;
+                case "7":
+                    Mudur mudur = new Mudur(isim, yas, maas, iseGiris);
+                    System.out.println("Personel ekleme başarılı. Eklenen personel => " + mudur);
+                    break;
+                default:
+                    System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
+                    break;
+            }
+        } else {
+            if (Integer.parseInt(secim) > 7 && Integer.parseInt(secim) <= departmanlar.size()) {
+                Personel personel = new Personel(isim,yas,maas,iseGiris);
+                personel.setDepartman(departmanlar.get(Integer.parseInt(secim)-1));
+                departmanlar.get(Integer.parseInt(secim)-1).getDepartmandakiPersoneller().add(personel);
+                System.out.println("Personel ekleme başarılı => "+personel);
+
+            }
         }
     }
 
     public void personelListele() {
-        int sayac=0;
+        int sayac = 0;
         try {
             if (!personeller.isEmpty()) {
                 for (Personel personel :
                         personeller) {
                     sayac++;
-                    System.out.println(sayac+".personel=> "+personel.getIsim()+" - "+personel.getId()+" - "+personel.getDepartman().getIsim());
+                    System.out.println(sayac + ".personel=> " + personel.getIsim() + " - " + personel.getId() + " - " + personel.getDepartman().getIsim());
                 }
             } else throw new PersonelTakipException(ErrorType.LISTE_BOS, "Personel bulunmadığından işlem başarısız");
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-        sayac=0;
+        sayac = 0;
     }
 
     public void personelDüzenle() {

@@ -3,7 +3,8 @@ package com.basonur.Soru1PersonelTakipSistemi;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Personel  {
+public  class Personel  {
+    //yeni oluşturulan departmana personel ekleyebilmek için abstract yapılamamaktadır
     private String isim;
     private int yas;
     private float maas;
