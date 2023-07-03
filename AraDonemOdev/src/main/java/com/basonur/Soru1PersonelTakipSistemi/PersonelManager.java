@@ -27,6 +27,7 @@ public class PersonelManager implements IIslev {
         departmanlar.add(new Departman("Muhasebe"));
         departmanlar.add(new Departman("Buro"));
         departmanlar.add(new Departman("Mudur"));
+
     }
 
     public void defPersonelOlustur() {
@@ -55,6 +56,7 @@ public class PersonelManager implements IIslev {
         LocalDate iseGiris = Utility.stringTarihAlma("İşe başlama tarihi girin yil-ay-gün");
         scanner.nextLine();
         System.out.println("Eklenecek personelin departmanını seçin :");
+
         for (Departman departman : departmanlar
         ) {
             System.out.println(sayac + "-" + departman.getIsim());
@@ -474,7 +476,9 @@ public class PersonelManager implements IIslev {
 
     @Override
     public <T> List<T> findAll(List<T> list, T t) {
+
         List<T> bulunanlar = new ArrayList<>();
+
         for (T eleman : list) {
             if (eleman.equals(t)) {
                 bulunanlar.add(eleman);
@@ -486,6 +490,7 @@ public class PersonelManager implements IIslev {
     @Override
     public void findById() {
         String arananId = Utility.stringDegerAlma("Aranacak idyi girin");
+       //H-1
         Optional<Personel> arananPersonel = personeller.stream()
                 .filter(x -> x.getDepartman().getDepartmandakiPersoneller().stream()
                         .anyMatch(y -> y.getId().equals(arananId)))

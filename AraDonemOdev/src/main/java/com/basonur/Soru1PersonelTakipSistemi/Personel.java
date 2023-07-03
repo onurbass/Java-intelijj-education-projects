@@ -23,7 +23,7 @@ public  class Personel  {
         this.maas = maas;
     }
 
-    public Personel(String isim, int yas, float maas, LocalDate iseGiris) {
+    public Personel(String isim, int yas, float maas, LocalDate iseGirisi) {
         this.isim = isim;
         this.yas = yas;
         this.maas = maas;

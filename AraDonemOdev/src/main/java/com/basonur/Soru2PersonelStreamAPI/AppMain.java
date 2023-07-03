@@ -30,17 +30,15 @@ public class AppMain {
         personelListesi.add(new Personel("Pınar", 36));
         personelListesi.add(new Personel("Emre", 27));
 
-        int otuzdanBuyuk = personelListesi.stream()
+       long otuzdanBuyuk= personelListesi.stream()
                 .filter(personel -> personel.getYas() > 30)
-                .collect(Collectors.toList())
-                .size();
+                .count();
 
         System.out.println("Yaşı 30'dan büyük olan personellerin sayısı: " + otuzdanBuyuk);
 
-        int aIleBaslayanlar = personelListesi.stream()
+        long aIleBaslayanlar = personelListesi.stream()
                 .filter(personel -> personel.getAd().startsWith("A"))
-                .collect(Collectors.toList())
-                .size();
+                .count();
 
         System.out.println("İsimleri A harfiyle başlayan personellerin sayısı: " + aIleBaslayanlar);
 
@@ -52,25 +50,24 @@ public class AppMain {
         System.out.println("Yaşı en büyük olan personelin adı: " + enYasliPersonel);
 
         int alininYasi = personelListesi.stream()
-                .filter(personel -> personel.getAd().equals("Ali"))
-                .mapToInt(Personel::getYas)
+                .filter(x -> x.getAd().equals("Ali"))
+                .map(y-> y.getYas())
                 .findFirst()
                 .orElse(0);
 
         System.out.println("İsmi Ali olan personelin yaşı: " + alininYasi);
 
         List<String> enKucukUcPersonel = personelListesi.stream()
-                .sorted(Comparator.comparingInt(Personel::getYas))
+                .sorted(Comparator.comparingInt(x->x.getYas()))
                 .limit(3)
-                .map(Personel::getAd)
+                .map(y->y.getAd())
                 .collect(Collectors.toList());
 
         System.out.println("Yaşı en küçük olan 3 personelin isimleri: " + enKucukUcPersonel);
 
-        int yasAraligi = personelListesi.stream()
+        long yasAraligi = personelListesi.stream()
                 .filter(personel -> personel.getYas() >= 25 && personel.getYas() <= 35)
-                .collect(Collectors.toList())
-                .size();
+                .count();
 
         System.out.println("Yaşı 25 ile 35 arasında olan personellerin sayısı: " + yasAraligi);
 
@@ -97,24 +94,17 @@ public class AppMain {
         System.out.println("İsimleri a harfi ile biten personellerin isimleri: " + aIleBitenler);
 
         double isimUzunlukOrt = personelListesi.stream()
-                .mapToInt(personel -> personel.getAd().length())
+                .mapToDouble(personel -> personel.getAd().length())
                 .average()
-                .orElse(0);
+                .orElse(0.0);
 
         System.out.println("İsimlerin uzunluğunun ortalaması: " + isimUzunlukOrt);
 
         int enUzunIsım = personelListesi.stream()
-                .mapToInt(personel -> personel.getAd().length())
-                .max()
-                .orElse(0);
+                .max(Comparator.comparingInt(p->p.getAd().length())).map(b->b.getYas()).get();
 
-        int enUzunIsimliKisiYasi = personelListesi.stream()
-                .filter(x -> x.getAd().length() == enUzunIsım)
-                .mapToInt(y -> y.getYas())
-                .findFirst()
-                .orElse(0);
 
-        System.out.println("İsmi en uzun olan personelin yaşı: " + enUzunIsimliKisiYasi);
+        System.out.println("İsmi en uzun olan personelin yaşı: " + enUzunIsım);
 
         boolean ahmetVarMi = personelListesi.stream()
                 .anyMatch(personel -> personel.getAd().equalsIgnoreCase("ahmet"));
@@ -135,11 +125,14 @@ public class AppMain {
 
         System.out.println("e harfi geçen personellerin isimleri: " + eHarfiOlanlar);
 
-        Map<String, Integer> enKucukKisi = personelListesi.stream()
-                .min(Comparator.comparingInt(Personel::getYas))
-                .map(personel -> Map.of(personel.getAd(), personel.getYas()))
-                .orElse(Map.of());
 
-        System.out.println("Yaşı en küçük olan personelin adı ve yaşı map: " + enKucukKisi);
+
+        Map<String, Integer> enKucukKisi2 = personelListesi.stream()
+                .min(Comparator.comparingInt(Personel::getYas)).stream().collect(Collectors.toMap(x->x.getAd(),y->y.getYas()));
+
+
+        System.out.println("Yaşı en küçük olan personelin adı ve yaşı map: " + enKucukKisi2);
+
+
     }
 }

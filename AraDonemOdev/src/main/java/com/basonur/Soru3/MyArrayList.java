@@ -60,6 +60,9 @@ public class MyArrayList<T> {
         boyut--;
     }
 
+    // 1-2-4-5-6 null
+    // 0 1 2 3 4 5
+
     public boolean contains(T element) {
         for (int i = 0; i < boyut; i++) {
             if (dizi[i].equals(element)) {
