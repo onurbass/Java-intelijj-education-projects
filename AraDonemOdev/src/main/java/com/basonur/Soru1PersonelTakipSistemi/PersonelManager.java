@@ -27,7 +27,6 @@ public class PersonelManager implements IIslev {
         departmanlar.add(new Departman("Muhasebe"));
         departmanlar.add(new Departman("Buro"));
         departmanlar.add(new Departman("Mudur"));
-
     }
 
     public void defPersonelOlustur() {
@@ -100,11 +99,10 @@ public class PersonelManager implements IIslev {
             }
         } else {
             if (Integer.parseInt(secim) > 7 && Integer.parseInt(secim) <= departmanlar.size()) {
-                Personel personel = new Personel(isim,yas,maas,iseGiris);
-                personel.setDepartman(departmanlar.get(Integer.parseInt(secim)-1));
-                departmanlar.get(Integer.parseInt(secim)-1).getDepartmandakiPersoneller().add(personel);
-                System.out.println("Personel ekleme başarılı => "+personel);
-
+                Personel personel = new Personel(isim, yas, maas, iseGiris);
+                personel.setDepartman(departmanlar.get(Integer.parseInt(secim) - 1));
+                departmanlar.get(Integer.parseInt(secim) - 1).getDepartmandakiPersoneller().add(personel);
+                System.out.println("Personel ekleme başarılı => " + personel);
             }
         }
     }
@@ -490,7 +488,7 @@ public class PersonelManager implements IIslev {
     @Override
     public void findById() {
         String arananId = Utility.stringDegerAlma("Aranacak idyi girin");
-       //H-1
+//H-1
         Optional<Personel> arananPersonel = personeller.stream()
                 .filter(x -> x.getDepartman().getDepartmandakiPersoneller().stream()
                         .anyMatch(y -> y.getId().equals(arananId)))
