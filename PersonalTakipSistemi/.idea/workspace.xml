@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a077ddc5-84f8-433f-84a3-cd477506f6be" name="Changes" comment="25062023">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/BuroPersoneli.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Departman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/GenelMudur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Hizmetli.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/InsanKaynaklari.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Mudur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/MuhasebePersoneli.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Personel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/basonur/Soru1PersonelTakipSistemi/TeknikPersonel.java" beforeDir="false" />
-    </list>
+    <list default="true" id="a077ddc5-84f8-433f-84a3-cd477506f6be" name="Changes" comment="25062023" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/AraDonemOdev",
+    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/PersonalTakipSistemi",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,6 +64,7 @@
       <workItem from="1687634381746" duration="12235000" />
       <workItem from="1687685511605" duration="4727000" />
       <workItem from="1687698634755" duration="109000" />
+      <workItem from="1688933210874" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="21062023">
       <created>1687297267218</created>
