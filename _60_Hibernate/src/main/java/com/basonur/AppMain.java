@@ -1,6 +1,7 @@
-package com.basonur.model;
+package com.basonur;
 
 
+import com.basonur.model.Customer;
 import com.basonur.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
