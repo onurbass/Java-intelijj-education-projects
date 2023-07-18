@@ -15,11 +15,14 @@ import java.util.Optional;
 @NoArgsConstructor
 @Builder
 
+
 public class Post implements ICrud<Post> {
     private Long id;
     private String content;
     private LocalDateTime date;
     private Long user_id;
+
+
 
     @Override
     public Post save(Post post) {

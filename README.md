@@ -1,2 +1,2 @@
-# Java-intelijj-education-projects
-Java intelijj eğitim
+# idea-sts-projects
+Java eğitim projeleri kodları
