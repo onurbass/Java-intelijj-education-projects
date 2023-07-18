@@ -2,8 +2,10 @@ package com.onurbas;
 
 
 import com.onurbas.controller.UserController;
+import com.onurbas.repository.PostRepository;
 import com.onurbas.repository.entity.Address;
 import com.onurbas.repository.entity.Name;
+import com.onurbas.repository.entity.Post;
 import com.onurbas.repository.entity.User;
 import com.onurbas.repository.enums.EAddress;
 import com.onurbas.repository.enums.EGender;
@@ -17,6 +19,8 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         Name name = new Name("Osman", "Onur", "Baş");
+
+        Post post = Post.builder().content("abcd").user_id(1L).build();
 
         User user = User.builder()
                 .name(name)
@@ -48,5 +52,7 @@ public class Main {
 //        }
         UserController userController = new UserController();
         userController.save(user);
+        PostRepository postRepository = new PostRepository();
+        postRepository.save(post);
    }
 }

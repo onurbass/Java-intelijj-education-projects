@@ -1,4 +1,4 @@
-package com.mimaraslan.model_entity;
+package com.onurbas.model_entity;
 
 
 import jakarta.persistence.*;

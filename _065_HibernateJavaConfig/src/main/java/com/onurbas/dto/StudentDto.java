@@ -1,4 +1,4 @@
-package com.mimaraslan.dto;
+package com.onurbas.dto;
 public class StudentDto {
     private String firstname;
 

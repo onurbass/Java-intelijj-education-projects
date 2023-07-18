@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -15,11 +16,20 @@ import java.util.Optional;
 @NoArgsConstructor
 @Builder
 
-
+@Entity
+@Table(name = "post")
 public class Post implements ICrud<Post> {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String content;
+    @Column
     private LocalDateTime date;
+    @Column
     private Long user_id;
 
 
@@ -48,4 +58,6 @@ public class Post implements ICrud<Post> {
     public Optional<Post> findById(Long id) {
         return Optional.empty();
     }
+
+
 }

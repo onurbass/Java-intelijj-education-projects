@@ -1,7 +1,7 @@
-package com.mimaraslan.util;
+package com.onurbas.util;
 
 
-import com.mimaraslan.model_entity.Student;
+import com.onurbas.model_entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -28,7 +28,7 @@ public class HibernateUtil {
                     // MySQL
                     settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
                     settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                    settings.put(Environment.URL, "jdbc:mysql://localhost:3306/businessDB");
+                    settings.put(Environment.URL, "jdbc:mysql://localhost:3306/businessDb");
                     settings.put(Environment.USER, "root");
                     settings.put(Environment.PASS, "123456789");
 
