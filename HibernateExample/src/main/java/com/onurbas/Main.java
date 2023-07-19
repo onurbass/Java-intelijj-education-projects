@@ -1,6 +1,7 @@
 package com.onurbas;
 
 
+import com.onurbas.controller.PostController;
 import com.onurbas.controller.UserController;
 import com.onurbas.repository.PostRepository;
 import com.onurbas.repository.entity.Address;
@@ -20,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         Name name = new Name("Osman", "Onur", "Baş");
 
-        Post post = Post.builder().content("abcd").user_id(1L).build();
+
 
         User user = User.builder()
                 .name(name)
@@ -52,7 +53,8 @@ public class Main {
 //        }
         UserController userController = new UserController();
         userController.save(user);
-        PostRepository postRepository = new PostRepository();
-        postRepository.save(post);
+        PostController postController = new PostController();
+        Post post = Post.builder().content("onur").user_id(user.getId()).build();
+        postController.save(post);
    }
 }
