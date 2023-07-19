@@ -7,9 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import javax.persistence.*;
 import java.util.*;
@@ -45,7 +42,7 @@ public class User implements ICrud<User> {
 
     @ElementCollection
     @Builder.Default
-    private  Set<String> ilgiAlanları=new HashSet<>();
+    private  Set<String> ilgiAlanlari =new HashSet<>();
 
 
     @ElementCollection
