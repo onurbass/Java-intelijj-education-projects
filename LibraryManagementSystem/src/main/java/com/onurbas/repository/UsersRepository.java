@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 import java.util.Optional;
 
-public class UserRepository implements ICrud<Users>{
+public class UsersRepository implements ICrud<Users>{
     Session session;
     Transaction transaction;
     @Override

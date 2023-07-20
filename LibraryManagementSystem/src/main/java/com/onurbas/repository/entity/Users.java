@@ -21,8 +21,9 @@ public class Users {
     @Column(unique = true)
     private String username;
     private String password;
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true,nullable = false,name = "ui_id")
+    @JoinColumn(unique = true,nullable = false)
     private UserInfo userInfo;
 
 }

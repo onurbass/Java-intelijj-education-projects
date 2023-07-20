@@ -1,24 +1,24 @@
 package com.onurbas.repository;
 
-import com.onurbas.repository.entity.UserInfo;
+import com.onurbas.repository.entity.Author;
 import com.onurbas.utility.HibernateUtility;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-public class UserInfoRepository implements ICrud<UserInfo> {
+public class AuthorRepository implements ICrud<Author> {
     Session session;
     Transaction transaction;
+
     @Override
-    public UserInfo save(UserInfo userInfo) {
+    public Author save(Author author) {
         try {
             session= HibernateUtility.getSessionFactory().openSession();
             System.out.println("Oturum açıldı");
             transaction = session.beginTransaction();
-            session.save(userInfo);
+            session.save(author);
             transaction.commit();
             System.out.println("Kayıt başarılı");
         } catch (Exception e) {
@@ -28,11 +28,11 @@ public class UserInfoRepository implements ICrud<UserInfo> {
             System.out.println("Oturum kapandı");
             session.close();
         }
-        return userInfo;
+        return  author;
     }
 
     @Override
-    public UserInfo update(UserInfo userInfo) {
+    public Author update(Author author) {
         return null;
     }
 
@@ -42,16 +42,12 @@ public class UserInfoRepository implements ICrud<UserInfo> {
     }
 
     @Override
-    public List<UserInfo> findAll() {
-        String hql="select ui from UserInfo  ui";
-        session=HibernateUtility.getSessionFactory().openSession();
-        TypedQuery<UserInfo>typedQuery = session.createQuery(hql, UserInfo.class);
-        List<UserInfo> userInfoList=typedQuery.getResultList();
-        return userInfoList;
+    public List<Author> findAll() {
+        return null;
     }
 
     @Override
-    public Optional<UserInfo> findById(Long id) {
+    public Optional<Author> findById(Long id) {
         return Optional.empty();
     }
 }

@@ -1,16 +1,16 @@
 package com.onurbas.repository.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,4 +23,8 @@ public class Address {
 
     private  String country;
     private String city;
+
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "address")
+    @Builder.Default
+    private Set<UserInfo> userInfos=new HashSet<>();
 }

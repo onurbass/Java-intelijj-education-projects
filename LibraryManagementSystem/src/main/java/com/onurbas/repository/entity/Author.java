@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -17,6 +19,12 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    private String firstName;
+    private String lastName;
+
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
+    private List<Book> book;
 
 }
