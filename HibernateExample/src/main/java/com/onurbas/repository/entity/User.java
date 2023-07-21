@@ -15,6 +15,7 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+
 @Entity
 
 @Table(name= "tbl_user")
@@ -30,6 +31,7 @@ public class User implements ICrud<User> {
 
     @Embedded
     private Name name;
+
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false,length = 32)
@@ -50,11 +52,17 @@ public class User implements ICrud<User> {
     @Builder.Default
     private Map<EAddress, Address> adressler = new HashMap<>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @Builder.Default
+    private List<Post> posts = new ArrayList<>();
+
     @Override
     public User save(User user) {
 
         return null;
     }
+
+
 
     @Override
     public User update(User user) {

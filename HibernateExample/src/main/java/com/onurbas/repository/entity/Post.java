@@ -25,13 +25,12 @@ public class Post implements ICrud<Post> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private String content;
-    @Column
-    private LocalDateTime date;
-    @Column
-    private Long userId;
 
+    private String content;
+    private LocalDateTime date;
+
+    @JoinColumn
+    private Long userId;
 
 
     @Override

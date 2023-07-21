@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.NamedQuery;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +36,7 @@ public class UserRepository implements ICrud<User>{
 
     @Override
     public User update(User user) {
+
         return null;
     }
 
@@ -45,8 +47,8 @@ public class UserRepository implements ICrud<User>{
 
     @Override
     public List<User> findAll() {
-        //String hql ="select * from tbl_user";
-        String hql = "select u from User as u";
+        //String sql ="select * from tbl_user";
+        String hql = "select u from User as u ";
         session=HibernateUtility.getSessionFactory().openSession();
         TypedQuery<User> typedQuery =session.createQuery(hql, User.class);
         List<User> userList = typedQuery.getResultList();
@@ -56,13 +58,14 @@ public class UserRepository implements ICrud<User>{
 
     @Override
     public Optional<User> findById(Long id) {
+        String sql = " select * from tbl_user where id="+id;
         String hql=" select u from User as u where u.id=:myId";
         session = HibernateUtility.getSessionFactory().openSession();
         TypedQuery<User> typedQuery =session.createQuery(hql, User.class);
         typedQuery.setParameter("myId",id);
         User user1 = null;
         try {
-            user1=typedQuery.getSingleResult();//tek sonuç getirir
+            user1=  typedQuery.getSingleResult();//tek sonuç getirir
         }catch (Exception e){
             System.out.println(e.toString());
         }
@@ -71,22 +74,19 @@ public class UserRepository implements ICrud<User>{
         return Optional.ofNullable(user1);
     }
     public Optional<User> findByUsername(String username){
-        String hql="select u from User as u where u.username=:myusername";
+        // String sql = "select * from tbl_user where tbl_user.username = "+username;
+        String hql="select u from User as u where u.username=:username";
         session = HibernateUtility.getSessionFactory().openSession();
         TypedQuery<User> typedQuery =session.createQuery(hql, User.class);
-        typedQuery.setParameter("myusername",username);
-        User user1 = null;
-        try {
-            user1=typedQuery.getSingleResult();
-        }catch (Exception e){
-            System.out.println(e.toString());
-        }
+        typedQuery.setParameter("username",username);
+        User user1 =typedQuery.getSingleResult();
 
         System.out.println(user1);
         return Optional.ofNullable(user1);
     }
 
     public List<Name> findAllName(){
+        // String sql = " select u.firstname,u.middlename,u.lastname from tbl_user as u "
         String hql = "select u.name from User as u";
         session=HibernateUtility.getSessionFactory().openSession();
         TypedQuery<Name> typedQuery =session.createQuery(hql, Name.class);
@@ -95,6 +95,7 @@ public class UserRepository implements ICrud<User>{
         return nameList;
     }
     public List<String> findAllFirstName(){
+        // String sql = " select u.firstname from tbl_user as u "
         String hql = "select u.name.firstName from User as u";
         session=HibernateUtility.getSessionFactory().openSession();
         TypedQuery<String> typedQuery =session.createQuery(hql, String.class);
