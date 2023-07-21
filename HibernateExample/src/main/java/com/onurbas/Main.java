@@ -23,7 +23,7 @@ public class Main {
                 .name(name)
                 .username("onurbass")
                 .password("123456")
-                .gender(EGender.MEN)
+                .gender(EGender.MAN)
                 .age(26)
                 .build();
        Set<String> ilgi = new HashSet<>();
@@ -33,7 +33,7 @@ public class Main {
         user.getIlgiAlanlari().add("Sinema");
         user.getIlgiAlanlari().add("oyun");
         Address address = new Address("Sinop","Turkey");
-        user.getAdressler().put(EAddress.EV,address);
+        user.getAdressler().put(EAddress.HOME,address);
 
 //        Session session = null;
 //        Transaction transaction = null;
@@ -50,7 +50,7 @@ public class Main {
         UserController userController = new UserController();
         userController.save(user);
         PostController postController = new PostController();
-        Post post = Post.builder().content("onur").user_id(user.getId()).build();
+        Post post = Post.builder().content("onur").userId(user.getId()).build();
         postController.save(post);
    }
 }

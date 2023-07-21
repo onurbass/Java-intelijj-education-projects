@@ -1,6 +1,7 @@
 package com.onurbas.controller;
 
 import com.onurbas.repository.ICrud;
+import com.onurbas.repository.entity.Name;
 import com.onurbas.repository.entity.User;
 import com.onurbas.service.UserService;
 
@@ -10,8 +11,15 @@ import java.util.Optional;
 public class UserController implements ICrud<User> {
    private final UserService userService ;
 
+
+
+
     public UserController() {
         this.userService = new UserService();
+    }
+
+    public Optional<User> findByUsername(String username){
+        return  userService.finByUsername(username);
     }
 
     @Override
@@ -37,6 +45,9 @@ public class UserController implements ICrud<User> {
 
     @Override
     public Optional<User> findById(Long id) {
-        return Optional.empty();
+        return userService.findById(id);
+    }
+    public List<Name> findAllName(){
+        return  userService.findAllName();
     }
 }

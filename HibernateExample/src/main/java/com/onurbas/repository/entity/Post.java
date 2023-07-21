@@ -30,7 +30,7 @@ public class Post implements ICrud<Post> {
     @Column
     private LocalDateTime date;
     @Column
-    private Long user_id;
+    private Long userId;
 
 
 
