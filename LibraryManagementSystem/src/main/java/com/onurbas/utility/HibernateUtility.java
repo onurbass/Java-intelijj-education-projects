@@ -17,9 +17,8 @@ public class HibernateUtility {
             configuration.addAnnotatedClass(Book.class);
             configuration.addAnnotatedClass(UserInfo.class);
             configuration.addAnnotatedClass(Author.class);
-            SessionFactory sessionFactory=configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 
-            return sessionFactory;
+            return configuration.configure("hibernate.cfg.xml").buildSessionFactory();
         } catch (HibernateException e) {
             e.printStackTrace();
             return null;
