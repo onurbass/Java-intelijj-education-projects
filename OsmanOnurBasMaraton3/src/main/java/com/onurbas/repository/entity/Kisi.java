@@ -20,9 +20,9 @@ public class Kisi {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int kisiId;
     private Name name;
-    private String ehliyetNo;
+    @Column(name = "tc",unique = true,nullable = false,length = 15)
+    private String tcKimlikNo;
     private String telefon;
-    private String email;
     private Adres adres;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "kiralayanKisi")

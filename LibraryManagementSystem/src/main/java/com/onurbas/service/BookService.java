@@ -3,6 +3,7 @@ package com.onurbas.service;
 import com.onurbas.repository.BookRepository;
 import com.onurbas.repository.ICrud;
 import com.onurbas.repository.entity.Book;
+import com.onurbas.repository.enums.EBookTypes;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,5 +39,9 @@ public class BookService implements ICrud<Book> {
     @Override
     public Optional<Book> findById(Long id) {
         return bookRepository.findById(id);
+    }
+
+    public List<Book> getBookByType(EBookTypes type) {
+    return  bookRepository.getBookByType(type);
     }
 }

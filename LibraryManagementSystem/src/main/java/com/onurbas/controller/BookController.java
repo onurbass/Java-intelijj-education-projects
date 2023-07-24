@@ -2,6 +2,7 @@ package com.onurbas.controller;
 
 import com.onurbas.repository.ICrud;
 import com.onurbas.repository.entity.Book;
+import com.onurbas.repository.enums.EBookTypes;
 import com.onurbas.service.BookService;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class BookController implements ICrud<Book> {
 
     @Override
     public Book update(Book book) {
-        return null;
+        return bookService.update(book);
     }
 
     @Override
@@ -38,5 +39,8 @@ public class BookController implements ICrud<Book> {
     @Override
     public Optional<Book> findById(Long id) {
         return Optional.empty();
+    }
+    public List<Book> getBookByType(EBookTypes type) {
+        return bookService.getBookByType(type);
     }
 }

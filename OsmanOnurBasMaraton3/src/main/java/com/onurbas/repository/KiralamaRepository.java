@@ -33,6 +33,8 @@ public class KiralamaRepository implements ICrud<Kiralama>{
         return kiralama;
     }
 
+
+
     @Override
     public Kiralama update(Kiralama kiralama) {
         return null;

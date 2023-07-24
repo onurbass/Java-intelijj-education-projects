@@ -24,7 +24,7 @@ public class Author {
     private String lastName;
 
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "author",fetch = FetchType.LAZY)
     private List<Book> book;
 
 }

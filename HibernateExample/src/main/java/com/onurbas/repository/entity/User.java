@@ -23,7 +23,6 @@ import java.util.*;
 public class User implements ICrud<User> {
 
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,6 +40,7 @@ public class User implements ICrud<User> {
     private int age;
     @Enumerated(EnumType.STRING)
     private EGender gender;
+    private int postCount;
 
     @ElementCollection
     @Builder.Default

@@ -16,8 +16,8 @@ public class UsersController implements ICrud<Users> {
     }
 
     @Override
-    public Users save(Users adress) {
-        return null;
+    public Users save(Users users) {
+        return usersService.save(users);
     }
 
     @Override

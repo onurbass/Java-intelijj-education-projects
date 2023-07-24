@@ -16,12 +16,13 @@ public class BorrowController implements ICrud<Borrow> {
     }
 
     @Override
-    public Borrow save(Borrow adress) {
-        return null;
+    public Borrow save(Borrow borrow) {
+        borrowService.setReturnDate(borrow);
+        return borrowService.save(borrow);
     }
 
     @Override
-    public Borrow update(Borrow adress) {
+    public Borrow update(Borrow borrow) {
         return null;
     }
 
@@ -39,4 +40,6 @@ public class BorrowController implements ICrud<Borrow> {
     public Optional<Borrow> findById(Long id) {
         return Optional.empty();
     }
+
+
 }

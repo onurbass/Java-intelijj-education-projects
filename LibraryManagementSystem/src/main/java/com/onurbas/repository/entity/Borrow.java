@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -18,7 +19,14 @@ public class Borrow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToOne
+    private Users users;
+    @ManyToOne
+    private Book book;
+    @Builder.Default
+    private LocalDate borrowDate=LocalDate.now();
+    @Transient
+    private int period;
+    private LocalDate returnDate;
 
-    private Date borrowDate;
-    private Date returnDate;
 }

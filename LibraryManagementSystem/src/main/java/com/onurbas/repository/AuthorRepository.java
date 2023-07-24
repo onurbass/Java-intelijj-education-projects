@@ -1,10 +1,12 @@
 package com.onurbas.repository;
 
 import com.onurbas.repository.entity.Author;
+import com.onurbas.repository.entity.Book;
 import com.onurbas.utility.HibernateUtility;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,5 +51,15 @@ public class AuthorRepository implements ICrud<Author> {
     @Override
     public Optional<Author> findById(Long id) {
         return Optional.empty();
+    }
+
+    public List<Book> startsWithA(){
+        String hql="select a.firstName,a.book from Author as a group by a.firstName having a.firstName like 'A%'";
+        session=HibernateUtility.getSessionFactory().openSession();
+        TypedQuery<Book> typedQuery = session.createQuery(hql,Book.class);
+
+
+
+        return typedQuery.getResultList();
     }
 }

@@ -2,10 +2,7 @@ package com.onurbas.repository.entity;
 
 import com.onurbas.repository.enums.EBookTypes;
 import com.onurbas.repository.enums.EStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -21,6 +18,7 @@ public class Book {
     private int id;
 
     private String title;
+    private int pageCount;
     @Enumerated(EnumType.STRING)
     private EBookTypes bookType;
 
@@ -28,8 +26,9 @@ public class Book {
     @Builder.Default
     private EStatus status = EStatus.AVAILABLE;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
+    @ToString.Exclude
     private Author author;
 
 }

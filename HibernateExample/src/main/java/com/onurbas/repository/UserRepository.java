@@ -105,4 +105,27 @@ public class UserRepository implements ICrud<User>{
         return nameList;
     }
 
+    public List<User> mostPostUser(){
+        // String sql = " select u.firstname from tbl_user as u "
+        String hql = "select u from User as u where postCount =(select max(postCount) from User)";
+        session=HibernateUtility.getSessionFactory().openSession();
+        TypedQuery<User> typedQuery =session.createQuery(hql, User.class);
+        List<User> userList= typedQuery.getResultList();
+        userList.forEach(System.out::println);
+
+        return userList;
+    }
+   // "select u from User u where u.id = (select p.userId from Post p where p.id ="+postId+")"
+    public List<Object[]> mostPostUser2(){
+        // String sql = " select u.firstname from tbl_user as u "
+        String hql = "select u from User as u where postCount =(select max(postCount) from User)";
+        session=HibernateUtility.getSessionFactory().openSession();
+        TypedQuery<Object[]> typedQuery =session.createQuery(hql, Object[].class);
+        List<Object[]> userList= typedQuery.getResultList();
+        userList.forEach(System.out::println);
+
+        return userList;
+    }
+
+
 }

@@ -23,8 +23,6 @@ public class Kiralama {
     private Date kiralamaTarihi;
     private Date kiralamaBitisTarihi;
     private double gunlukKiralamaUcreti;
-    private EDurum eDurum;
-
 
     @ManyToOne
     @JoinColumn(name = "kisi_id")
