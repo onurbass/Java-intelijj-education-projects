@@ -8,35 +8,34 @@ import java.util.List;
 import java.util.Optional;
 
 public class AddressService implements ICrud<Address> {
-
-    private AddressRepository addressRepository;
+    private AddressRepository AddressRepository;
 
     public AddressService() {
-        this.addressRepository=new AddressRepository();
+        this.AddressRepository = new AddressRepository();
     }
 
     @Override
     public Address save(Address address) {
-        return addressRepository.save(address);
+        return AddressRepository.save(address);
     }
 
     @Override
     public Address update(Address address) {
-        return addressRepository.update(address);
+        return AddressRepository.update(address);
     }
 
     @Override
     public void deleteById(Long id) {
-        addressRepository.deleteById(id);
+        AddressRepository.deleteById(id);
     }
 
     @Override
     public List<Address> findAll() {
-        return addressRepository.findAll();
+        return AddressRepository.findAll();
     }
 
     @Override
     public Optional<Address> findById(Long id) {
-        return addressRepository.findById(id);
+        return AddressRepository.findById(id);
     }
 }

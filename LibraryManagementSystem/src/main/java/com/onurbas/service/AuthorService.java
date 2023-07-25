@@ -1,20 +1,17 @@
 package com.onurbas.service;
 
 import com.onurbas.repository.AuthorRepository;
-
 import com.onurbas.repository.ICrud;
-import com.onurbas.repository.entity.Author;
 import com.onurbas.repository.entity.Author;
 
 import java.util.List;
 import java.util.Optional;
 
-public class AuthorService implements ICrud<Author> {
-
+public class AuthorService  implements ICrud<Author> {
     private AuthorRepository authorRepository;
 
     public AuthorService() {
-        this.authorRepository=new AuthorRepository();
+        this.authorRepository = new AuthorRepository();
     }
 
     @Override

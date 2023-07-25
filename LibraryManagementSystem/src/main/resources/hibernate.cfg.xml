@@ -4,35 +4,12 @@
 <hibernate-configuration>
     <session-factory>
 
-
-        <property name="hibernate.connection.driver_class">
-            org.postgresql.Driver
-        </property>
-
-        <!-- Assume test is the database name -->
-
-        <property name="hibernate.connection.url">
-            jdbc:postgresql://localhost:5432/lbsDb
-        </property>
-
-        <property name="hibernate.connection.username">
-            postgres
-        </property>
-
-        <property name="hibernate.connection.password">
-            123456789
-        </property>
-
-        <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
-
-
-        <mapping class="com.onurbas.repository.entity.Users"/>
-        <mapping class="com.onurbas.repository.entity.Author"/>
-        <mapping class="com.onurbas.repository.entity.Address"/>
-        <mapping class="com.onurbas.repository.entity.Book"/>
-        <mapping class="com.onurbas.repository.entity.Borrow"/>
-        <mapping class="com.onurbas.repository.entity.UserInfo"/>
+        <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/lbsDb</property>
+        <property name = "hibernate.connection.username">postgres</property>
+        <property name = "hibernate.connection.password">123456789</property>
+        <property name="hibernate.show_sql"> true </property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
 
     </session-factory>

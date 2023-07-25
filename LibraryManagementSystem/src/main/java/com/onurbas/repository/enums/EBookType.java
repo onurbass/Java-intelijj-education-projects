@@ -1,5 +1,6 @@
 package com.onurbas.repository.enums;
 
-public enum EBookTypes {
+public enum EBookType {
+
     NOVEL,HISTORY,SCIENCE_FICTION,STORY
 }

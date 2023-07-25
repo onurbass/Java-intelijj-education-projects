@@ -11,24 +11,23 @@ import java.util.Optional;
 public class AddressRepository implements ICrud<Address> {
     Session session;
     Transaction transaction;
-
     @Override
     public Address save(Address address) {
         try {
-            session= HibernateUtility.getSessionFactory().openSession();
-            System.out.println("Oturum açıldı");
-            transaction = session.beginTransaction();
+            session= HibernateUtility.getSESSION_FACTORY().openSession();
+            transaction=session.beginTransaction();
+            System.out.println("Oturum acıldı...");
             session.save(address);
             transaction.commit();
-            System.out.println("Kayıt başarılı");
-        } catch (Exception e) {
-            System.out.println("kayıt başarısız");
+            System.out.println("Kayıt başarılı...");
+        }catch (Exception e){
+            e.printStackTrace();
             transaction.rollback();
         }finally {
-            System.out.println("Oturum kapandı");
+            System.out.println("Oturum kapandı...");
             session.close();
         }
-        return  address;
+        return address;
     }
 
     @Override

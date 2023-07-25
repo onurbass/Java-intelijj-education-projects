@@ -8,13 +8,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-
 @Entity
 public class Users {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +21,7 @@ public class Users {
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true,nullable = false)
-    private UserInfo userInfo;
+    @JoinColumn(unique = true ,nullable = true,name = "ui_id")
+    private UserInformation userInformation;
 
 }

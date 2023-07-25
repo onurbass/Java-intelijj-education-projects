@@ -1,33 +1,37 @@
 package com.onurbas.repository.entity;
 
-import com.onurbas.repository.enums.EBookTypes;
+import com.onurbas.repository.enums.EBookType;
 import com.onurbas.repository.enums.EStatus;
 import lombok.*;
 
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-
 @Entity
+@NamedQueries(
+        {
+         @NamedQuery( name="findByBookType" ,query = "select b from Book as b where b.bookType=:myType"),
+         @NamedQuery(name = "findbyId" ,query ="select b from Book as b where b.id=:myId" )
+        }
+)
+
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    private Long id;
     private String title;
-    private int pageCount;
     @Enumerated(EnumType.STRING)
-    private EBookTypes bookType;
-
+    private EBookType bookType;
     @Enumerated(EnumType.STRING)
     @Builder.Default
-    private EStatus status = EStatus.AVAILABLE;
+    private EStatus status=EStatus.AVAILABLE;
+    private int pageCount;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "my_author_id",referencedColumnName = "id",nullable = false)
     @ToString.Exclude
     private Author author;
 

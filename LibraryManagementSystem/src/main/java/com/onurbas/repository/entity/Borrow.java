@@ -7,24 +7,24 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-
 @Entity
 public class Borrow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @ManyToOne
     private Users users;
+
     @ManyToOne
     private Book book;
     @Builder.Default
     private LocalDate borrowDate=LocalDate.now();
+
     @Transient
     private int period;
     private LocalDate returnDate;

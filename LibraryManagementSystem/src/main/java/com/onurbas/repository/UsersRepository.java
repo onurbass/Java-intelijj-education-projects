@@ -1,31 +1,34 @@
 package com.onurbas.repository;
 
+import com.onurbas.repository.entity.Book;
+import com.onurbas.repository.entity.Borrow;
 import com.onurbas.repository.entity.Users;
 import com.onurbas.utility.HibernateUtility;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-public class UsersRepository implements ICrud<Users>{
+public class UsersRepository implements ICrud<Users> {
     Session session;
     Transaction transaction;
+
     @Override
     public Users save(Users users) {
-
         try {
-            session= HibernateUtility.getSessionFactory().openSession();
-            System.out.println("Oturum açıldı");
-            transaction = session.beginTransaction();
+            session= HibernateUtility.getSESSION_FACTORY().openSession();
+            transaction=session.beginTransaction();
+            System.out.println("Oturum acıldı...");
             session.save(users);
             transaction.commit();
-            System.out.println("Kayıt başarılı");
-        } catch (Exception e) {
-            System.out.println("kayıt başarısız");
+            System.out.println("Kayıt başarılı...");
+        }catch (Exception e){
+            e.printStackTrace();
             transaction.rollback();
         }finally {
-            System.out.println("Oturum kapandı");
+            System.out.println("Oturum kapandı...");
             session.close();
         }
         return users;
@@ -50,4 +53,6 @@ public class UsersRepository implements ICrud<Users>{
     public Optional<Users> findById(Long id) {
         return Optional.empty();
     }
+
+
 }

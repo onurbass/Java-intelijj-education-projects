@@ -8,23 +8,20 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-
 @Entity
-public class UserInfo {
+public class UserInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String firstName;
     private String lastName;
-    private String phone;
-    @Transient
+    private String phoneNumber;
     private String about;
 
-    @ManyToMany(cascade = CascadeType.ALL)
     @ToString.Exclude
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<Address> address;
-
 }

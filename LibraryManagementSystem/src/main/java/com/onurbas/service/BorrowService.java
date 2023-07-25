@@ -1,6 +1,5 @@
 package com.onurbas.service;
 
-
 import com.onurbas.repository.BorrowRepository;
 import com.onurbas.repository.ICrud;
 import com.onurbas.repository.entity.Borrow;
@@ -9,13 +8,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class BorrowService implements ICrud<Borrow> {
-
     private BorrowRepository borrowRepository;
 
-
     public BorrowService() {
-
-        this.borrowRepository=new BorrowRepository();
+        this.borrowRepository = new BorrowRepository();
     }
 
     @Override
@@ -30,7 +26,7 @@ public class BorrowService implements ICrud<Borrow> {
 
     @Override
     public void deleteById(Long id) {
-        borrowRepository.deleteById(id);
+    borrowRepository.deleteById(id);
     }
 
     @Override
@@ -43,7 +39,7 @@ public class BorrowService implements ICrud<Borrow> {
         return borrowRepository.findById(id);
     }
 
-    public void setReturnDate(Borrow borrow) {
+    public void saveReturnDate(Borrow borrow) {
         borrow.setReturnDate(borrow.getBorrowDate().plusDays(borrow.getPeriod()));
     }
 }
