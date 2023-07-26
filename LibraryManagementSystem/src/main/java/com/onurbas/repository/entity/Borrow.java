@@ -17,10 +17,10 @@ public class Borrow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Users users;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Book book;
     @Builder.Default
     private LocalDate borrowDate=LocalDate.now();
