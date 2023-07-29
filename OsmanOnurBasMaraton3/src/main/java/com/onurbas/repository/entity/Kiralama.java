@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -20,16 +21,16 @@ public class Kiralama {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int kiralamaId;
-    private Date kiralamaTarihi;
-    private Date kiralamaBitisTarihi;
+    private LocalDate kiralamaTarihi;
+    private int period;
     private double gunlukKiralamaUcreti;
 
     @ManyToOne
     @JoinColumn(name = "kisi_id")
     private Kisi kiralayanKisi; // Kisi sınıfından referans
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "arac_id") // Kiralanan araca dair referans için yabancı anahtar sütunu belirleme
-    private Arac arac;
+    private Arac kiralananArac;
 
 }

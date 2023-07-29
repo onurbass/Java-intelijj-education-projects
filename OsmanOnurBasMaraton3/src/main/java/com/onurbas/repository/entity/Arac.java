@@ -4,6 +4,7 @@ import com.onurbas.repository.enums.EDurum;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,6 +24,9 @@ public class Arac {
     @Builder.Default
     @Enumerated(EnumType.STRING)
     private EDurum eDurum=EDurum.KIRALANABILIR;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "kiralananArac")
+    List<Kiralama> aracKiralamaları;
 
 
     @Override

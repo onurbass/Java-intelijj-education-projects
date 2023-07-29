@@ -57,9 +57,9 @@ public class Main {
         aracRepository.save(arac3);
 
         // Kiralamaları oluştur ve veritabanına kaydet
-        Kiralama kiralama1 = Kiralama.builder().arac(arac).gunlukKiralamaUcreti(500d).build();
-        Kiralama kiralama2 = Kiralama.builder().arac(arac2).gunlukKiralamaUcreti(500d).build();
-        Kiralama kiralama3 = Kiralama.builder().arac(arac3).gunlukKiralamaUcreti(500d).build();
+        Kiralama kiralama1 = Kiralama.builder().kiralananArac(arac).gunlukKiralamaUcreti(500d).build();
+        Kiralama kiralama2 = Kiralama.builder().kiralananArac(arac2).gunlukKiralamaUcreti(500d).build();
+        Kiralama kiralama3 = Kiralama.builder().kiralananArac(arac3).gunlukKiralamaUcreti(500d).build();
 
 
         // Kişi oluştur ve Kiralamaları ekle, ardından veritabanına kaydet
@@ -163,11 +163,10 @@ public class Main {
         } while (!secim.equals("0"));
     }
 
-    private List<Arac> kiradakiAraclar() {
-        //burada araçtaki EDurumu kirada yapıp onlarda ayıklanabilir.
+    public List<Arac> kiradakiAraclar() {
         List<Arac> kiradakiAraclarList;
         try (Session session = HibernateUtility.getSessionFactory().openSession()) {
-            String hql = "select a from Arac as a where a.aracId IN (select k.arac.aracId from Kiralama as k)";
+            String hql = "select a from Arac as a where a.eDurum = 'KIRADA'";
             TypedQuery<Arac> typedQuery = session.createQuery(hql, Arac.class);
             kiradakiAraclarList = typedQuery.getResultList();
         } catch (Exception e) {
@@ -178,7 +177,7 @@ public class Main {
         return kiradakiAraclarList;
     }
 
-    private List<Arac> bostakiAraclar() {
+    public List<Arac> bostakiAraclar() {
         List<Arac> bostakiAraclarList;
         try (Session session = HibernateUtility.getSessionFactory().openSession()) {
             String hql = "select a from Arac as a where a.eDurum =:durum";
@@ -199,7 +198,7 @@ public class Main {
 
 
         while (true) {
-            System.out.print("Daha önce kiralama yaptınız mı? (Evet/Hayır): ");
+            System.out.print("İsminiz sistemde kayıtlı mı? (Evet/Hayır): ");
             String dahaOnceKiralama = scanner.nextLine();
 
             if (dahaOnceKiralama.equalsIgnoreCase("evet")) {
@@ -222,7 +221,7 @@ public class Main {
         scanner.close();
     }
 
-    private void tcyeGoreBul() {
+    public void tcyeGoreBul() {
     }
 
     public void kisiOlustur() {
@@ -239,6 +238,10 @@ public class Main {
 //            String sehir = scanner.nextLine();
 //            System.out.println("Ulke :");
 //            String ulke = scanner.nextLine();
+
+            if (tcKimlikNo == null) {
+                
+            }
             Kisi kisi = Kisi.builder()
                     .tcKimlikNo(tcKimlikNo)
                     .name(Name.builder().firstName(ad).lastName(soyad).build())
@@ -265,7 +268,7 @@ public class Main {
         scanner.close();
     }
 
-    private static void musterininKiraladigiArac() {
+    public static void musterininKiraladigiArac() {
     }
 
 

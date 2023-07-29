@@ -1,0 +1,35 @@
+package com.mimaraslan.model;
+
+import com.mimaraslan.model.enums.EEvStatus;
+import lombok.*;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+public class Arac {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "yapim_yili")
+    private LocalDate yapimYili;
+
+    private String tur;
+    private int kat;
+    private String semt;
+
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
+    private EEvStatus durum =EEvStatus.MUSAIT;
+
+/*
+    @ToString.Exclude
+    @OneToMany(mappedBy = "ev", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Kiralama> kiralamaList;
+    */
+}
