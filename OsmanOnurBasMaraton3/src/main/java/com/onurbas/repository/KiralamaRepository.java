@@ -1,59 +1,64 @@
 package com.onurbas.repository;
 
-import com.onurbas.repository.entity.Arac;
-import com.onurbas.repository.entity.Kiralama;
-import com.onurbas.utility.HibernateUtility;
+import com.onurbas.entity.Arac;
+import com.onurbas.entity.Kiralama;
+import com.onurbas.entity.Kisi;
+import com.onurbas.utility.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class KiralamaRepository implements ICrud<Kiralama>{
-    Session session;
-    Transaction transaction;
+public class KiralamaRepository implements ICrud<Kiralama> {
+    private Session session;
+    private Transaction transaction;
+
+
+
     @Override
     public Kiralama save(Kiralama kiralama) {
-        try {
-            session= HibernateUtility.getSessionFactory().openSession();
-            System.out.println("Oturum açıldı");
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
             session.save(kiralama);
             transaction.commit();
-            System.out.println("Kayıt başarılı");
         } catch (Exception e) {
-            System.out.println("kayıt başarısız");
-            transaction.rollback();
-        }finally {
-            System.out.println("Oturum kapandı");
-            session.close();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
         }
         return kiralama;
     }
 
-
-
     @Override
-    public Kiralama update(Kiralama kiralama) {
-        return null;
+    public Kiralama findById(Long id) {
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            return session.get(Kiralama.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
-    @Override
-    public void deleteById(Long id) {
+    public void kiradakiAraclar() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql="SELECT a from Arac as a where a.durum='KIRADA'";
+            session.createQuery(hql, Kisi.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
 
+        }
     }
-
-    @Override
-    public List<Kiralama> findAll() {
-        return null;
+    public List<Arac> kiralananAraclarByKisiId(Long id){
+        String hql="SELECT k.arac FROM Kiralama k where k.kisi.id=:id";
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        TypedQuery<Arac> typedQuery =session.createQuery(hql, Arac.class);
+        typedQuery.setParameter("id",id);
+        return typedQuery.getResultList();
     }
-
-    @Override
-    public Optional<Kiralama> findById(Long id) {
-        return Optional.empty();
-    }
-
-
 }

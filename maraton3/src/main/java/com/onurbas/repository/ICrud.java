@@ -5,6 +5,8 @@ import java.util.Optional;
 
 public interface ICrud<T>  {
     T save(T t);
-
-    T findById(Long id);
+    T update(T t);
+    void deleteById(Long id );
+    List<T> findAll();
+    Optional<T> findById(Long id);
 }

@@ -1,20 +1,22 @@
 package com.onurbas.repository;
 
-import com.onurbas.repository.entity.Arac;
-import com.onurbas.utility.HibernateUtility;
+import com.onurbas.entity.Arac;
+import com.onurbas.entity.enums.EDurum;
+import com.onurbas.utility.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Optional;
 
 public class AracRepository implements ICrud<Arac> {
-    Session session;
-    Transaction transaction;
+    private Session session;
+    private Transaction transaction;
+
     @Override
     public Arac save(Arac arac) {
         try {
-            session= HibernateUtility.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
             System.out.println("Oturum açıldı");
             transaction = session.beginTransaction();
             session.save(arac);
@@ -22,8 +24,10 @@ public class AracRepository implements ICrud<Arac> {
             System.out.println("Kayıt başarılı");
         } catch (Exception e) {
             System.out.println("kayıt başarısız");
-            transaction.rollback();
-        }finally {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        } finally {
             System.out.println("Oturum kapandı");
             session.close();
         }
@@ -31,22 +35,58 @@ public class AracRepository implements ICrud<Arac> {
     }
 
     @Override
-    public Arac update(Arac arac) {
-        return null;
+    public Arac findById(Long id) {
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            return session.get(Arac.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
-    @Override
-    public void deleteById(Long id) {
 
+    public List<Arac> kiradakiAraclar() {
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            String hql = "SELECT a FROM Arac as a WHERE a.durum = :durum";
+            TypedQuery<Arac> typedQuery = session.createQuery(hql, Arac.class);
+            typedQuery.setParameter("durum", EDurum.KIRADA);
+            return typedQuery.getResultList();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
-    @Override
-    public List<Arac> findAll() {
-        return null;
+    public List<Arac> musaitAraclar() {
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            String hql = "SELECT a FROM Arac as a WHERE a.durum = :durum";
+            TypedQuery<Arac> typedQuery = session.createQuery(hql, Arac.class);
+            typedQuery.setParameter("durum", EDurum.MUSAIT);
+            return typedQuery.getResultList();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
-    @Override
-    public Optional<Arac> findById(Long id) {
-        return Optional.empty();
+    public boolean aracKayitliMi(String saseNo) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "SELECT COUNT(a) FROM Arac as a WHERE a.saseNo = :saseNo";
+            TypedQuery<Long> typedQuery = session.createQuery(hql, Long.class);
+            typedQuery.setParameter("saseNo", saseNo);
+            return typedQuery.getSingleResult() > 0;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }
