@@ -2,6 +2,7 @@ package com.onurbas.entity;
 
 import lombok.*;
 import com.onurbas.entity.enums.EDurum;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,24 +14,28 @@ import java.util.List;
 @Entity
 public class Arac {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "marka")
-    private String marka;
-    @Column(name = "model")
-    private String model;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(name = "sase_no" ,unique = true,nullable = false)
-    private String saseNo;
+  @Column(name = "marka")
+  private String marka;
 
+  @Column(name = "model")
+  private String model;
 
-    @Builder.Default
-    @Enumerated(EnumType.STRING)
-    private EDurum durum = EDurum.MUSAIT;
+  //Ayırt edici özellik olarak saseNo belirlendi -unique = true, nullable = false
+  @Column(name = "sase_no", unique = true, nullable = false)
+  private String saseNo;
 
-    @ToString.Exclude
-    @OneToMany(mappedBy = "arac", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Kiralama> kiralamaList;
+  @Builder.Default
+  @Enumerated(EnumType.STRING)
+  private EDurum durum = EDurum.MUSAIT;
+
+  //Iki taraflı ilişki. Kiralama classına maplendi.
+  // Araca yapılan işlem kiralamayı etkilemesi için cascadeType.all olarak setlendi
+  @ToString.Exclude
+  @OneToMany(mappedBy = "arac", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private List<Kiralama> kiralamaList;
 
 }

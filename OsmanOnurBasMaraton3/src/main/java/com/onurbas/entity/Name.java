@@ -12,8 +12,9 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Builder
 
+//Name classı Kisi classına embeddable olarak setlendi
 @Embeddable
 public class Name {
-    private String firstName;
-    private String lastName;
+  private String firstName;
+  private String lastName;
 }

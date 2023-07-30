@@ -8,213 +8,254 @@ import com.onurbas.entity.Arac;
 import com.onurbas.entity.Kiralama;
 import com.onurbas.entity.Kisi;
 import com.onurbas.entity.enums.EDurum;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class AppMenu {
-    static Scanner scanner = new Scanner(System.in);
-    static AracController aracController;
-    static KiralamaController kiralamaController;
-    static KisiController kisiController;
+  static Scanner scanner = new Scanner(System.in);
+  static AracController aracController;
+  static KiralamaController kiralamaController;
+  static KisiController kisiController;
 
-    public AppMenu() {
-        this.aracController = new AracController();
-        this.kiralamaController = new KiralamaController();
-        this.kisiController = new KisiController();
-    }
+  public AppMenu() {
+	this.aracController = new AracController();
+	this.kiralamaController = new KiralamaController();
+	this.kisiController = new KisiController();
+  }
 
-    public void anaMenu() {
+  public void aracEkle() {
 
-        int secim = 0;
+	System.out.println("Lütfen aracın markasını giriniz");
+	String marka = scanner.nextLine();
 
-        do {
-            System.out.println("*******************************************");
-            System.out.println("******** ARAÇ KİRALAMA UYGULAMASI *********");
-            System.out.println("*******************************************");
+	System.out.println("Lütfen aracın modelini giriniz");
+	String model = scanner.nextLine();
+	System.out.println("Lütfen aracın Şasi No giriniz (*Zorunlu)");
+	String saseNo = scanner.nextLine();
 
-            System.out.println("1- Arac Ekle");
-            System.out.println("2- Arac Ara");
-            System.out.println("3- Kişi Ekle");
-            System.out.println("4- Arac Kirala");
-            System.out.println("5- Rapor");
-            System.out.println("0- Çıkış");
+	Arac arac = Arac.builder().marka(marka).model(model).saseNo(saseNo).build();
 
-            secim = scanner.nextInt();
-            scanner.nextLine();
+	aracController.save(arac);
+  }
 
-            switch (secim) {
-                case 1:
-                    System.out.println("Arac ekle seçildi..");
-                    aracEkle();
-                    break;
+  public void aracAra() {
 
-                case 2:
-                    System.out.println("Arac ara seçildi..");
-                    aracAra();
-                    break;
+	System.out.println("Lütfen arac id sini giriniz");
+	Long id = scanner.nextLong();
 
-                case 3:
-                    System.out.println("Kisi ekle seçildi..");
-                    kisiEkle();
-                    break;
+	Arac arac = aracController.findById(id);
+	if (arac!=null)
+	System.out.println(arac);
+	else System.out.println("Arac bulunamadı");
+  }
 
-                case 4:
-                    System.out.println("Arac kirala seçildi..");
-                    aracKirala();
-                    break;
+  public void kisiEkle() {
+	System.out.println("Yeni kişi kayıt oluşturuluyor..");
 
-                case 5:
-                    System.out.println("Rapor seçildi..");
-                    rapor();
-                    break;
+	System.out.println("Lütfen isminizi giriniz: ");
+	String ad = scanner.nextLine();
 
-                case 0:
-                    System.out.println("Çıkış yapılıyor...");
-                    break;
+	System.out.println("Lütfen soyisminizi giriniz");
+	String soyad = scanner.nextLine();
 
-                default:
-                    break;
-            }
+	System.out.println("Lütfen tc giriniz (*Zorunlu)");
+	String tcNo = scanner.nextLine();
 
-        } while (secim != 0);
-    }
+	Kisi kisi = Kisi.builder()
+					.name(Name.builder().firstName(ad).lastName(soyad).build()).tcNo(tcNo)
+					.build();
 
-    public void aracEkle() {
+	kisiController.save(kisi);
+  }
 
-        System.out.println("Lütfen aracın markasını giriniz");
-        String marka = scanner.nextLine();
+  public void aracKirala() {
+	List<Arac> musaitAraclar = musaitAraclar();
 
-        System.out.println("Lütfen aracın modelini giriniz");
-        String model = scanner.nextLine();
-        System.out.println("Lütfen aracın Şasi No giriniz (*Zorunlu)");
-        String saseNo = scanner.nextLine();
+	if (musaitAraclar.isEmpty()) {
+	  System.out.println("Müsait araç bulunamadı!");
+	  return; // Menüye geri dön
+	}
 
-        Arac arac = Arac.builder().marka(marka).model(model).saseNo(saseNo).build();
+	System.out.println("Lütfen arac id sini giriniz");
+	Long id = scanner.nextLong();
 
-        aracController.save(arac);
-    }
+	Arac arac = musaitAraclar.stream()
+							 .filter(a -> a.getId().equals(id))
+							 .findFirst()
+							 .orElse(null);
 
-    public void aracAra() {
+	if (arac == null) {
+	  System.out.println("Araç listede değil veya kirada!");
+	  return; // Menüye geri dön
+	}
 
-        System.out.println("Lütfen arac id sini giriniz");
-        Long id = scanner.nextLong();
+	System.out.println("ARAC BİLGİSİ: " + arac);
 
-        Arac arac = aracController.findById(id);
-        System.out.println(arac);
-    }
+	System.out.println("Lütfen kiralamak isteyen kisi id sini giriniz");
+	Long kisiId = scanner.nextLong();
 
-    public void aracKirala() {
+	List<Kisi> kisiler = kisiController.findAll();
+	Kisi kisi = kisiler.stream()
+					   .filter(k -> k.getId().equals(kisiId))
+					   .findFirst()
+					   .orElse(null);
 
-        System.out.println("Lütfen arac id sini giriniz");
-        Long id = scanner.nextLong();
+	if (kisi == null) {
+	  System.out.println("Kişi listede değil!");
+	  return; // Menüye geri dön
+	}
 
-        Arac arac = aracController.findById(id);
-        arac.setDurum(EDurum.KIRADA);
-        System.out.println("ARAC BİLGİSİ: " + arac);
+	System.out.println("KİŞİ BİLGİSİ:" + kisi);
 
+	arac.setDurum(EDurum.KIRADA);
+	aracController.update(arac);
 
-        System.out.println("Lütfen kiralamak isteyen kisi id sini giriniz");
-        Long kisiId = scanner.nextLong();
+	Kiralama kiralama = Kiralama.builder()
+								.arac(arac)
+								.kisi(kisi)
+								.build();
+	kiralamaController.save(kiralama);
+  }
 
-        Kisi kisi = kisiController.kisiAraById(kisiId);
-        System.out.println("KİŞİ BİLGİSİ:" + kisi);
+  public void aracKirala2() {
+	musaitAraclar();
+	System.out.println("Lütfen arac id sini giriniz");
+	Long id = scanner.nextLong();
 
+	Arac arac = aracController.findById(id);
 
-        Kiralama kiralama = Kiralama.builder()
-                .arac(arac)
-                .kisi(kisi)
-                .build();
-        kiralamaController.save(kiralama);
-    }
+	System.out.println("ARAC BİLGİSİ: " + arac);
 
-    public void kisiEkle() {
-        System.out.println("Yeni kişi kayıt oluşturuluyor..");
+	System.out.println("Lütfen kiralamak isteyen kisi id sini giriniz");
+	Long kisiId = scanner.nextLong();
 
-        System.out.println("Lütfen isminizi giriniz: ");
-        String ad = scanner.nextLine();
+	Kisi kisi = kisiController.kisiAraById(kisiId);
+	System.out.println("KİŞİ BİLGİSİ:" + kisi);
+	arac.setDurum(EDurum.KIRADA);
+	aracController.update(arac);
+	Kiralama kiralama = Kiralama.builder()
+								.arac(arac)
+								.kisi(kisi)
+								.build();
+	kiralamaController.save(kiralama);
+  }
 
-        System.out.println("Lütfen soyisminizi giriniz");
-        String soyad = scanner.nextLine();
+  public List<Arac> kiradakiAraclar() {
+	aracController.aracDurumSorgu(EDurum.KIRADA).forEach(System.out::println);
 
-        System.out.println("Lütfen tc giriniz (*Zorunlu)");
-        String tcNo = scanner.nextLine();
+	return aracController.aracDurumSorgu(EDurum.KIRADA);
 
-        Kisi kisi = Kisi.builder()
-                .name(Name.builder().firstName(ad).lastName(soyad).build()).tcNo(tcNo)
-                .build();
+  }
 
-        kisiController.save(kisi);
-    }
+  public List<Arac> musaitAraclar() {
+	aracController.aracDurumSorgu(EDurum.MUSAIT).forEach(System.out::println);
+	return aracController.aracDurumSorgu(EDurum.MUSAIT);
+  }
 
-    public void rapor() {
+  public void herhangiBirMusterininKiraladigiAraclar(Long id) {
+	aracController.musterininKiraladigiArabalar(id);
+  }
 
-        int secim = 0;
+  public void anaMenu() {
 
-        do {
+	int secim = 0;
 
-            System.out.println("**************************");
-            System.out.println("******** RAPORLAR ********");
-            System.out.println("**************************");
+	do {
+	  System.out.println("*******************************************");
+	  System.out.println("******** ARAÇ KİRALAMA UYGULAMASI *********");
+	  System.out.println("*******************************************");
 
-            System.out.println("1- Şuan Kirada olan Araclar");
-            System.out.println("2- Boşta müsait olan Araclar");
-            System.out.println("3- Herhangi bir müşterinin kiraladığı Araclar");
-            System.out.println("0- Çıkış");
+	  System.out.println("1- Arac Ekle");
+	  System.out.println("2- Arac Ara");
+	  System.out.println("3- Kişi Ekle");
+	  System.out.println("4- Arac Kirala");
+	  System.out.println("5- Rapor");
+	  System.out.println("0- Çıkış");
 
-            secim = scanner.nextInt();
+	  secim = scanner.nextInt();
+	  scanner.nextLine();
 
-            switch (secim) {
-                case 1:
-                    System.out.println("Şu an kirada olan araclar aranıyor. ");
-                    kiradakiAraclar();
-                    break;
+	  switch (secim) {
+		case 1:
+		  System.out.println("Arac ekle seçildi..");
+		  aracEkle();
+		  break;
 
-                case 2:
-                    System.out.println("Boşta müsait olan araclar aranıyor.");
-                    musaitAraclar();
-                    break;
+		case 2:
+		  System.out.println("Arac ara seçildi..");
+		  aracAra();
+		  break;
 
-                case 3:
-                    System.out.println("Herhangi bir müşterinin kiraladığı araclar aranıyor.");
-                    System.out.println("Kiralamaları aranacak kişi id girin.");
-                    herhangiBirMusterininKiraladigiAraclar(scanner.nextLong());
-                    break;
+		case 3:
+		  System.out.println("Kisi ekle seçildi..");
+		  kisiEkle();
+		  break;
 
+		case 4:
+		  System.out.println("Arac kirala seçildi..");
+		  aracKirala();
+		  break;
 
-                case 0:
-                    System.out.println("Çıkış yapılıyor...");
-                    break;
+		case 5:
+		  System.out.println("Rapor seçildi..");
+		  rapor();
+		  break;
 
-                default:
-                    break;
-            }
+		case 0:
+		  System.out.println("Çıkış yapılıyor...");
+		  break;
 
-        } while (secim != 0);
-    }
+		default:
+		  break;
+	  }
 
-    public void kiradakiAraclar() {
-        List<Arac> araclerListesi = aracController.kiradakiAraclar();
-        for (Arac arac : araclerListesi) {
-            System.out.println("Durumu: " + arac.getDurum() + "\t Id: " + arac.getId() + "\t Marka: " + arac.getMarka() +
-                    "\t Model: " + arac.getModel());
-        }
-    }
+	} while (secim != 0);
+  }
 
-    public void musaitAraclar() {
-        List<Arac> araclarListesi = aracController.musaitAracler();
-        for (Arac arac : araclarListesi) {
-            System.out.println("Durumu: " + arac.getDurum() + "\t Id: " + arac.getId() + "\t Marka: " + arac.getMarka() +
-                    "\t Model: " + arac.getModel());
-        }
-    }
+  public void rapor() {
 
-    public void herhangiBirMusterininKiraladigiAraclar(Long id) {
-        List<Arac> araclarListesi = kiralamaController.kiralanmisArabalar(id);
-        for (Arac arac : araclarListesi) {
-            System.out.println("Durumu: " + arac.getDurum() + "\t Id: " + arac.getId() + "\t Marka: " + arac.getMarka() +
-                    "\t Model: " + arac.getModel());
-        }
-    }
+	int secim = 0;
 
+	do {
+
+	  System.out.println("**************************");
+	  System.out.println("******** RAPORLAR ********");
+	  System.out.println("**************************");
+	  System.out.println("1- Şuan Kirada olan Araclar");
+	  System.out.println("2- Boşta müsait olan Araclar");
+	  System.out.println("3- Herhangi bir müşterinin kiraladığı Araclar");
+	  System.out.println("0- Çıkış");
+	  secim = scanner.nextInt();
+
+	  switch (secim) {
+		case 1:
+		  System.out.println("Şu an kirada olan araclar aranıyor. ");
+		  kiradakiAraclar();
+		  break;
+
+		case 2:
+		  System.out.println("Boşta müsait olan araclar aranıyor.");
+		  musaitAraclar();
+		  break;
+
+		case 3:
+		  System.out.println("Herhangi bir müşterinin kiraladığı araclar aranıyor.");
+		  System.out.println("Kiralamaları aranacak kişi id girin.");
+		  herhangiBirMusterininKiraladigiAraclar(scanner.nextLong());
+		  break;
+
+		case 0:
+		  System.out.println("Çıkış yapılıyor...");
+		  break;
+
+		default:
+		  break;
+	  }
+
+	} while (secim != 0);
+  }
 }
 

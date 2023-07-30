@@ -12,15 +12,19 @@ import java.util.List;
 @Entity
 public class Kisi {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Name name;
-    @Column(name = "tc", unique = true, nullable = false, length = 15)
-    private String tcNo;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
+  private Name name;
 
-    @ToString.Exclude
-    @OneToMany(mappedBy = "kisi", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Kiralama> kiralamaList;
+  //Ayırt edici özellik olarak tc belirlendi -unique = true, nullable = false
+  @Column(name = "tc", unique = true, nullable = false, length = 15)
+  private String tcNo;
+
+  //Iki taraflı ilişki. Kiralama classına maplendi.
+  // Kisi ye yapılan işlem kiralamayı etkilemesi için cascadeType.all olarak setlendi
+  @ToString.Exclude
+  @OneToMany(mappedBy = "kisi", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private List<Kiralama> kiralamaList;
 }
