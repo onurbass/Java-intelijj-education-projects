@@ -30,6 +30,7 @@ public class Arac {
 
   @Builder.Default
   @Enumerated(EnumType.STRING)
+  @Column(name = "durum")
   private EDurum durum = EDurum.MUSAIT;
 
   //Iki taraflı ilişki. Kiralama classına maplendi.

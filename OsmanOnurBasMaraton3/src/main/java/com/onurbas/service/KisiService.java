@@ -17,10 +17,13 @@ public class KisiService {
 	return kisiRepository.save(kisi);
   }
 
-  public Kisi kisiAraById(Long id) {
+  public Kisi findById(Long id) {
 	return kisiRepository.findById(id);
   }
   public List<Kisi> findAll() {
 	return kisiRepository.findAll();
+  }
+  public void update(Kisi kisi) {
+	kisiRepository.update(kisi);
   }
 }

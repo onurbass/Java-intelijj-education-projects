@@ -23,7 +23,7 @@ public class Kiralama {
   private LocalDate kiralamaTarihi = LocalDate.now();
   private LocalDate kiralamaBitisTarihi;
 
-  //sadece hesaplama için kullanılacağından Transient
+  //sadece hesaplama için kullanılacak
   @Transient
   private int period;
 

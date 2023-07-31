@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AppMenu {
-  static Scanner scanner = new Scanner(System.in);
+   Scanner scanner = new Scanner(System.in);
   static AracController aracController;
   static KiralamaController kiralamaController;
   static KisiController kisiController;
@@ -120,28 +120,6 @@ public class AppMenu {
 	kiralamaController.save(kiralama);
   }
 
-  public void aracKirala2() {
-	musaitAraclar();
-	System.out.println("Lütfen arac id sini giriniz");
-	Long id = scanner.nextLong();
-
-	Arac arac = aracController.findById(id);
-
-	System.out.println("ARAC BİLGİSİ: " + arac);
-
-	System.out.println("Lütfen kiralamak isteyen kisi id sini giriniz");
-	Long kisiId = scanner.nextLong();
-
-	Kisi kisi = kisiController.kisiAraById(kisiId);
-	System.out.println("KİŞİ BİLGİSİ:" + kisi);
-	arac.setDurum(EDurum.KIRADA);
-	aracController.update(arac);
-	Kiralama kiralama = Kiralama.builder()
-								.arac(arac)
-								.kisi(kisi)
-								.build();
-	kiralamaController.save(kiralama);
-  }
 
   public List<Arac> kiradakiAraclar() {
 	aracController.aracDurumSorgu(EDurum.KIRADA).forEach(System.out::println);

@@ -19,9 +19,12 @@ public class KisiController {
   }
 
   public Kisi kisiAraById(Long id) {
-	return kisiService.kisiAraById(id);
+	return kisiService.findById(id);
   }
   public List<Kisi> findAll() {
 	return kisiService.findAll();
+  }
+  public void update(Kisi kisi) {
+	kisiService.update(kisi);
   }
 }

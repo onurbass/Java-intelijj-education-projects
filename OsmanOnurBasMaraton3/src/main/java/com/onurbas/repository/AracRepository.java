@@ -1,7 +1,6 @@
 package com.onurbas.repository;
 
 import com.onurbas.entity.Arac;
-import com.onurbas.entity.Kisi;
 import com.onurbas.entity.enums.EDurum;
 import com.onurbas.utility.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -38,6 +37,7 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
 
   @Override
   public Arac findById(Long id) {
+
 	try {
 	  session = HibernateUtil.getSessionFactory().openSession();
 	  return session.get(Arac.class,id);
@@ -51,8 +51,7 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
 
   @Override
   public void update(Arac arac) {
-	Session session = HibernateUtil.getSessionFactory().openSession();
-	Transaction transaction = null;
+	session = HibernateUtil.getSessionFactory().openSession();
 
 	try {
 	  transaction = session.beginTransaction();
@@ -70,7 +69,7 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
 
   @Override
   public List<Arac> findAll() {
-	Session session = HibernateUtil.getSessionFactory().openSession();
+	session = HibernateUtil.getSessionFactory().openSession();
 	try {
 
 	  TypedQuery<Arac> typedQuery = session.createQuery("FROM Arac ",Arac.class);
@@ -81,25 +80,14 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
 	}
   }
 
-  public boolean aracKayitliMi(String saseNo) {
-	try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-	  String hql = "SELECT COUNT(a) FROM Arac as a WHERE a.saseNo = :saseNo";
-	  TypedQuery<Long> typedQuery = session.createQuery(hql,Long.class);
-	  typedQuery.setParameter("saseNo",saseNo);
-	  return typedQuery.getSingleResult() > 0;
-	} catch (Exception ex) {
-	  ex.printStackTrace();
-	  return false;
-	}
-  }
-
+  //aracDurumSorgu ile kirada-müsait araçlar tek metotda sorgulanması
   @Override
-  public List<Arac> aracDurumSorgu(EDurum eDurum) {
+  public List<Arac> aracDurumSorgu(EDurum durum) {
 	try {
 	  session = HibernateUtil.getSessionFactory().openSession();
 	  String hql = "SELECT a FROM Arac as a WHERE a.durum = :durum";
 	  TypedQuery<Arac> typedQuery = session.createQuery(hql,Arac.class);
-	  typedQuery.setParameter("durum",eDurum);
+	  typedQuery.setParameter("durum",durum);
 	  return typedQuery.getResultList();
 	} catch (Exception ex) {
 	  ex.printStackTrace();
@@ -109,9 +97,10 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
 	}
   }
 
+  //müşteri id ile kiraladığı arabalara ulaşan hql sorgusu
   @Override
   public List<Arac> musterininKiraladigiArabalar(Long id) {
-	Session session = null;
+
 	try {
 	  String hql = "Select k.arac from Kiralama as k where k.kisi.id =:p";
 	  session = HibernateUtil.getSessionFactory().openSession();

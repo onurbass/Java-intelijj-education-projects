@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class VehicleRepository implements ICrud<Vehicle>, IVehicleReport{
+public class VehicleRepository implements ICrud<Vehicle>{
 
     @Override
     public Vehicle add(Vehicle vehicle) {
@@ -41,7 +41,7 @@ public class VehicleRepository implements ICrud<Vehicle>, IVehicleReport{
         }
     }
 
-    @Override
+
     public List<Vehicle> availableOrRentedVehicles(EVehicleStatus eVehicleStatus) {
         Session session=null;
         try {
@@ -57,7 +57,7 @@ public class VehicleRepository implements ICrud<Vehicle>, IVehicleReport{
         }
     }
 
-    @Override
+
     public List<Vehicle> rentedVehiclesByPersonId(Long id) {
         Session session=null;
         try {

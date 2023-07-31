@@ -18,9 +18,17 @@ public class KiralamaController {
 	kiralamaService.setKiralamaBitisTarihi(kiralama);
 	return kiralamaService.save(kiralama);
   }
+
   public List<Kiralama> findAll() {
 	return kiralamaService.findAll();
   }
 
+  public void update(Kiralama kiralama) {
+	kiralamaService.update(kiralama);
+  }
+
+  public Kiralama findById(Long id) {
+	return kiralamaService.findById(id);
+  }
 
 }

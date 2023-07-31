@@ -2,7 +2,6 @@ package com.onurbas.repository;
 
 import com.onurbas.entity.Arac;
 import com.onurbas.entity.Kiralama;
-import com.onurbas.entity.Kisi;
 import com.onurbas.utility.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -75,22 +74,5 @@ public class KiralamaRepository implements ICrud<Kiralama> {
 	}
   }
 
-  public void kiradakiAraclar() {
-	try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-	  String hql = "SELECT a from Arac as a where a.durum='KIRADA'";
-	  session.createQuery(hql,Kisi.class).list();
-	} catch (Exception e) {
-	  e.printStackTrace();
-
-	}
-  }
-
-  public List<Arac> kiralananAraclarByKisiId(Long id) {
-	String hql = "SELECT k.arac FROM Kiralama k where k.kisi.id=:id";
-	Session session = HibernateUtil.getSessionFactory().openSession();
-	TypedQuery<Arac> typedQuery = session.createQuery(hql,Arac.class);
-	typedQuery.setParameter("id",id);
-	return typedQuery.getResultList();
-  }
 
 }
