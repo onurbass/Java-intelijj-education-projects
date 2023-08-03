@@ -71,7 +71,6 @@ public class AracRepository implements ICrud<Arac>, IAracRapor {
   public List<Arac> findAll() {
 	session = HibernateUtil.getSessionFactory().openSession();
 	try {
-
 	  TypedQuery<Arac> typedQuery = session.createQuery("FROM Arac ",Arac.class);
 	  typedQuery.getResultList().forEach(System.out::println);
 	  return typedQuery.getResultList();
