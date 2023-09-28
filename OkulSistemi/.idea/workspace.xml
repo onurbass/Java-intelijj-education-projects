@@ -4,158 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0d689c5-a0b2-4762-856e-8a20a9fc2eb6" name="Changes" comment="sa">
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/src/main/java/com/onurbas/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/src/main/java/com/onurbas/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/src/main/java/com/onurbas/model/CustomerDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/src/main/java/com/onurbas/util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_067_OneToMany/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/intelijj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/intelijj.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/BuroPersoneli.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/BuroPersoneli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Departman.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Departman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/ErrorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/GenelMudur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/GenelMudur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Hizmetli.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Hizmetli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/IIslev.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/IIslev.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/InsanKaynaklari.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/InsanKaynaklari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Mudur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Mudur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/MuhasebePersoneli.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/MuhasebePersoneli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Personel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Personel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelTakipException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/PersonelTakipException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/TeknikPersonel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/TeknikPersonel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru1PersonelTakipSistemi/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru2PersonelStreamAPI/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru2PersonelStreamAPI/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru2PersonelStreamAPI/Personel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru2PersonelStreamAPI/Personel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru3/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru3/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru3/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AraDonemOdev/src/main/java/com/basonur/Soru3/MyArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Araba.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Araba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/EDurum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/EDurum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/IOtoGaleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/IOtoGaleri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kasiyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kasiyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kiralama.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kiralama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kisi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Kisi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Musteri.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/Musteri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/OtoGaleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArabaKiralama/src/main/java/OtoGaleri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson001_JSON/ReadOkuJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson001_JSON/ReadOkuJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson001_JSON/WriteYazJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson001_JSON/WriteYazJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/Calisan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/Calisan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/ReadOkuGSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/ReadOkuGSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/WriteYazGSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson002_GSON/WriteYazGSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson003_javax_json/JavaxJSONRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson003_javax_json/JavaxJSONRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson003_javax_json/JavaxJSONWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson003_javax_json/JavaxJSONWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/Calisan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/Calisan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/JacksonJSONReadOku.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/JacksonJSONReadOku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/JacksonJSONWriteYaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson004_jackson/JacksonJSONWriteYaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson005_hiyerasi_kurma/birdosyada/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson005_hiyerasi_kurma/birdosyada/Results.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson006_SerializationDeserialization/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson006_SerializationDeserialization/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson006_SerializationDeserialization/Calisan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BilgeAdamLessons/src/main/java/com/onurbas/lesson006_SerializationDeserialization/Calisan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/ICrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/ICrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Name.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/enums/EAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/enums/EAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/enums/EGender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/repository/enums/EGender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/utility/HibernateUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/java/com/onurbas/utility/HibernateUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HibernateExample/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateExample/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Istisnalar/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Istisnalar/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Istisnalar/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Istisnalar/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Istisnalar/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Istisnalar/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Istisnalar/src/main/java/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Istisnalar/src/main/java/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/controller/FutbolcuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/controller/FutbolcuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/FutbolcuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/FutbolcuRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/TakimRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/TakimRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/entity/Futbolcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/entity/Futbolcu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/entity/Takim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/repository/entity/Takim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/service/FutbolcuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/service/FutbolcuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/utility/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/utility/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/utility/ICrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBCExample/src/main/java/com/basonur/utility/ICrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/AddressRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/ICrud.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/UserInfoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/Borrow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/UserInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/repository/entity/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/java/com/onurbas/utility/HibernateUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryManagementSystem/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/BusinessYolcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/BusinessYolcu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/EFirmaAdi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/EFirmaAdi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/EkonomiYolcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/EkonomiYolcu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/Yolcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru3Ucak/Yolcu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru4/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru4/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru4/Urun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Maraton2/src/main/java/com/basonur/Soru4/Urun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PersonalTakipSistemi/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PersonalTakipSistemi/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PersonalTakipSistemi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PersonalTakipSistemi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_66_Hibernate_OneToOne_Annotation/src/main/java/com/onurbas/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_66_Hibernate_OneToOne_Annotation/src/main/java/com/onurbas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_66_Hibernate_OneToOne_Annotation/src/main/java/com/onurbas/model/CustomerDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_66_Hibernate_OneToOne_Annotation/src/main/java/com/onurbas/model/CustomerDetail.java" afterDir="false" />
-    </list>
+    <list default="true" id="b0d689c5-a0b2-4762-856e-8a20a9fc2eb6" name="Changes" comment="sa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,6 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2R4EYqIfbaNyNy2mT3uegU1OkVV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -178,12 +30,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ACTIVE_CLOUD_PROJECT_ACCOUNT": "onurbass.ob@gmail.com",
+    "ACTIVE_CLOUD_PROJECT_ID": "green-calling-398220",
+    "ACTIVE_CLOUD_PROJECT_NAME": "My First Project",
+    "ACTIVE_CLOUD_PROJECT_NUMBER": "582922403899",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/_66_Hibernate_OneToOne_Annotation",
+    "com.google.cloudcode.ide_session_index": "20230928_0000",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/PersonalTakipSistemi",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -202,6 +60,7 @@
       <workItem from="1686501005042" duration="587000" />
       <workItem from="1686567386872" duration="56000" />
       <workItem from="1689766158816" duration="27000" />
+      <workItem from="1695916713987" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="sa">
       <created>1686501439547</created>
