@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a077ddc5-84f8-433f-84a3-cd477506f6be" name="Changes" comment="25062023">
-      <change beforePath="$PROJECT_DIR$/../OkulSistemi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OkulSistemi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2RLTM3X6iscGMRfye20sdZa9TBG" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -46,10 +46,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "com.google.cloudcode.ide_session_index": "20230928_0000",
+    "com.google.cloudcode.ide_session_index": "20231001_0000",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/PersonalTakipSistemi",
+    "last_opened_file_path": "D:/Java10-Workspace/intelijj/Java-intelijj-education-projects/OkulSistemi",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,6 +78,8 @@
       <workItem from="1688933210874" duration="179000" />
       <workItem from="1689245930043" duration="291000" />
       <workItem from="1695916799138" duration="16000" />
+      <workItem from="1695917461462" duration="1895000" />
+      <workItem from="1696144313745" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="21062023">
       <created>1687297267218</created>
